@@ -1,6 +1,9 @@
+import java.nio.file.Path
+
 organization := "com.micronautics"
 name := "html-form-scala"
 version := "0.1.0"
+licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
 scalaVersion := "2.11.8"
 //crossScalaVersions := Seq("2.11.8", "2.12.2")
@@ -66,3 +69,45 @@ initialCommands in console := """
 cancelable := true
 
 sublimeTransitive := true
+
+// bintray settings
+bintrayOrganization := Some("micronautics")
+bintrayRepository := "play"
+bintrayVcsUrl := Some("git@github.com:mslinn/html-form-scala.git")
+
+// sbt-site settings
+enablePlugins(SiteScaladocPlugin)
+siteSourceDirectory := target.value / "api"
+publishSite
+
+// sbt-ghpages settings
+enablePlugins(GhpagesPlugin)
+git.remoteRepo := "git@github.com:mslinn/html-form-scala.git"
+//git.remoteRepo := jgitSetting.value
+
+/*doc in Compile ~= { (value: java.io.File) => // enhance doc command to also replace the CSS
+  import java.nio.file.{Files, Paths, StandardCopyOption}
+  val source: Path = Paths.get("src/site/latest/api/lib/template.css")
+  val dest: Path = Paths.get("target/site/latest/api/lib/").resolve(source.getFileName)
+  println(s"Copying $source to $dest")
+  Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING)
+  value
+}*/
+
+/*ghpagesPushSite ~= { _: Unit => // enhance doc command to also replace the CSS
+  import java.nio.file.{Files, Paths, StandardCopyOption}
+  val source: Path = Paths.get("src/site/latest/api/lib/template.css")
+  val dest: Path = Paths.get("target/site/latest/api/lib/").resolve(source.getFileName)
+  println(s"Copying $source to $dest")
+  Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING)
+  ()
+}*/
+
+/*previewSite ~= { _: Unit => // enhance doc command to also replace the CSS
+  import java.nio.file.{Files, Paths, StandardCopyOption}
+  val source: Path = Paths.get("src/site/latest/api/lib/template.css")
+  val dest: Path = Paths.get("target/site/latest/api/lib/").resolve(source.getFileName)
+  println(s"Copying $source to $dest")
+  Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING)
+  ()
+}*/
