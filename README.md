@@ -8,4 +8,4 @@ Add this to your project's `build.sbt`:
 
     resolvers += "micronautics/play on bintray" at "http://dl.bintray.com/micronautics/play"
 
-    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.1" withSources()
+    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.2" withSources()
