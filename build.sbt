@@ -2,7 +2,7 @@ import java.nio.file.Path
 
 organization := "com.micronautics"
 name := "html-form-scala"
-version := "0.1.2"
+version := "0.1.3"
 licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
 scalaVersion := "2.11.8"
@@ -48,6 +48,7 @@ libraryDependencies ++= Seq(
   "com.github.nscala-time"  %% "nscala-time"          % "2.14.0"  withSources(),
   "com.micronautics"        %% "currency"             % "1.2.10"  withSources(),
   "com.typesafe.play"       %% "play"                 % playVer   % Provided withSources(),
+  "com.typesafe.play"       %% "filters-helpers"      % playVer   % Provided withSources(),
   //
   "org.scalatest"           %% "scalatest"            % "3.0.1"   % Test withSources(),
   "junit"                   %  "junit"                % "4.12"    % Test,
