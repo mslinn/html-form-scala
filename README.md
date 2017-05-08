@@ -11,6 +11,8 @@ Most HTML5 features are not supported "out of the box" so it is common to spend 
 The [Play Bootstrap](https://github.com/adrianhurt/play-bootstrap) widgets require Twitter Bootstrap,
 but otherwise its API is similar to the Play Framework form widget API.
 
+[http://www.lihaoyi.com/scalatags/](ScalaTags) is another library for generating HTML using Scala.
+
 This package produces output that closely resembles Play Bootstrap's output, 
 but it uses many explicit parameters instead of following the Play Framework API.
 Widgets in the `views.html.htmlForm` package are HTML5 compatible, 
