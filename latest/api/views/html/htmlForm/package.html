@@ -1,0 +1,317 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>htmlForm - views.html.htmlForm</title>
+          <meta name="description" content="htmlForm - views.html.htmlForm" />
+          <meta name="keywords" content="htmlForm views.html.htmlForm" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'views.html.htmlForm.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="views">views</a>.<a href="../package.html" class="extype" name="views.html">html</a></p>
+        <h1>htmlForm</h1><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">htmlForm</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/html-form-scala/tree/master/src/main/scala/views/html/htmlForm/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="views.html.htmlForm"><span>htmlForm</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="views.html.htmlForm.CSRFHelper" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CSRFHelperextendsAnyRef"></a>
+      <a id="CSRFHelper:CSRFHelper"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CSRFHelper.html"><span class="name">CSRFHelper</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@CSRFHelperextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="views.html.htmlForm.CsrfForm" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CsrfFormextendsProductwithSerializable"></a>
+      <a id="CsrfForm:CsrfForm"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CsrfForm.html"><span class="name">CsrfForm</span></a><span class="params">(<span name="id">id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="action">action: <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.6/play_2.11-2.5.6-javadoc.jar/!/index.html#play.api.mvc.Call" class="extype" target="_top">Call</a></span>, <span name="args">args: (<span class="extype" name="scala.Symbol">Symbol</span>, <span class="extype" name="scala.Predef.String">String</span>)*</span>)</span><span class="params">(<span name="body">body: (<span class="extype" name="scala.Option">Option</span>[<a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.6/play_2.11-2.5.6-javadoc.jar/!/index.html#play.api.data.Form" class="extype" target="_top">Form</a>[_]]) ⇒ <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/twirl-api_2.11/1.1.1/twirl-api_2.11-1.1.1-javadoc.jar/!/index.html#play.twirl.api.Html" class="extype" target="_top">Html</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="csrfHelper">csrfHelper: <a href="CSRFHelper.html" class="extype" name="views.html.htmlForm.CSRFHelper">CSRFHelper</a></span>, <span name="request">request: <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.6/play_2.11-2.5.6-javadoc.jar/!/index.html#play.api.mvc.RequestHeader" class="extype" target="_top">RequestHeader</a></span>)</span><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@CsrfFormextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Automatically adds a CSRF form field</p>
+    </li><li name="views.html.htmlForm.FadeValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FadeValueextendsAnyValwithProductwithSerializable"></a>
+      <a id="FadeValue:FadeValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FadeValue.html"><span class="name">FadeValue</span></a><span class="params">(<span name="value">value: <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span> with <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@FadeValueextendsAnyValwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="views.html.htmlForm.StringOrSeq" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="StringOrSeq[-T]extendsAnyRef"></a>
+      <a id="StringOrSeq[-T]:StringOrSeq[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StringOrSeq.html"><span class="name">StringOrSeq</span></a><span class="tparams">[<span name="T">-T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@StringOrSeq[-T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>http://stackoverflow.com/a/3508555/553865</p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="views.html.htmlForm.HtmlForm" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HtmlForm"></a>
+      <a id="HtmlForm:HtmlForm"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="HtmlForm$.html"><span class="name">HtmlForm</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@HtmlForm" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="views.html.htmlForm.StringOrSeq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StringOrSeq"></a>
+      <a id="StringOrSeq:StringOrSeq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="StringOrSeq$.html"><span class="name">StringOrSeq</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@StringOrSeq" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="views.html.htmlForm.bootstrap3" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="bootstrap3"></a>
+      <a id="bootstrap3:bootstrap3"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="bootstrap3/package.html"><span class="name">bootstrap3</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@bootstrap3" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="views.html.htmlForm.datePicker" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="datePicker"></a>
+      <a id="datePicker:datePicker"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="datePicker$.html"><span class="name">datePicker</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@datePicker" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="views.html.htmlForm.inputText2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="inputText2"></a>
+      <a id="inputText2:inputText2"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="inputText2$.html"><span class="name">inputText2</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@inputText2" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">See https://github.com/playframework/Play20/blob/master/framework/src/play/src/main/scala/views/helper/inputText.scala.html</p>
+    </li><li name="views.html.htmlForm.password" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="password"></a>
+      <a id="password:password"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="password$.html"><span class="name">password</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@password" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="views.html.htmlForm#tag" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tag(start:String,end:String,content:String*):String"></a>
+      <a id="tag(String,String,String*):String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tag</span><span class="params">(<span name="start">start: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="end">end: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#views.html.htmlForm.package@tag(start:String,end:String,content:String*):String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
