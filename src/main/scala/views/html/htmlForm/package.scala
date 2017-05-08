@@ -14,10 +14,10 @@ package views.html
   * This package produces output that closely resembles Play Bootstrap's output,
   * but it uses many explicit parameters instead of following the Play Framework API approach.
   * Widgets in the `views.html.htmlForm` package are HTML5 compatible,
-  * and include a [[htmlForm.datePicker date picker]] and a [[htmlForm.CSRFHelper CSRF form helper]].
+  * and include a [[htmlForm.CSRFHelper CSRF form helper]].
   *
   * Widgets related to Twitter Bootstrap 3.x are provided in the `views.html.htmlForm.bootstrap3` package.
-  * Two flavors of modal dialog are provided.
+  * Two flavors of modal dialog are provided and a [[htmlForm.bootstrap3.datePicker date picker]].
   * The [[htmlForm.bootstrap3.HtmlForm]] object contains `checkbox`es, `select`s, and various flavors of `input` for
   * email, URLs, currency, passwords, percentages, range-limited numeric values and much more. */
 package object htmlForm {

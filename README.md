@@ -12,14 +12,15 @@ The [Play Bootstrap](https://github.com/adrianhurt/play-bootstrap) widgets requi
 but otherwise its API is similar to the Play Framework form widget API.
 
 [ScalaTags](http://www.lihaoyi.com/scalatags/) is another library for generating HTML using Scala.
+It is not Play Framework aware, or Twitter Bootstrap aware &ndash; instead, it is completely generic.
 
 This package produces output that closely resembles Play Bootstrap's output, 
 but it uses many explicit parameters instead of following the Play Framework API.
 Widgets in the `views.html.htmlForm` package are HTML5 compatible, 
-and include a date picker and a CSRF form helper.
+and include a CSRF form helper.
 
 Widgets related to Twitter Bootstrap 3.x are provided in the `views.html.htmlForm.bootstrap3` package.
-Two flavors of modal dialog are provided. 
+Two flavors of modal dialog are provided and a date picker. 
 The `HtmlForm` object contains `checkbox`es, `select`s, and various flavors of `input` for 
 email, URLs, currency, passwords, percentages, range-limited numeric values and much more.
 
@@ -28,7 +29,7 @@ Add this to your project's `build.sbt`:
 
     resolvers += "micronautics/play on bintray" at "http://dl.bintray.com/micronautics/play"
 
-    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.4" withSources()
+    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.5" withSources()
 
 ## Scaladoc
 [Here](http://mslinn.github.io/html-form-scala/latest/api/)

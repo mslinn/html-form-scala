@@ -1,12 +1,13 @@
-package views.html.htmlForm
+package views.html.htmlForm.bootstrap3
 
 import org.joda.time.format.{DateTimeFormat, DateTimeFormatter}
 import org.joda.time.{DateTime, Days, Months, Period, ReadablePeriod}
 import play.api.data.Field
 import play.twirl.api.Html
 
-// See https://github.com/eternicode/bootstrap-datepicker
-// See http://bootstrap-datepicker.readthedocs.io/en/latest/
+/** Although the `datePicker` is not dependant on Twitter Bootstrap, this object wraps in Bootstrap-centric HTML and CSS.
+  * See [[https://github.com/eternicode/bootstrap-datepicker]]
+  * See [[http://bootstrap-datepicker.readthedocs.io/en/latest/]] */
 object datePicker {
   val format = "yyyy-MM-dd"
   val dateFormatter: DateTimeFormatter = DateTimeFormat.forPattern(format)
