@@ -47,11 +47,12 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This is yet another approach to providing HTML form widgets for Play Framework.
-The form widgets provided with Play Framework feature a minimum of parameters and have an arcane syntax as a result.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This is yet another approach to providing HTML form widgets for Play Framework using Scala.
+The <a href="https://playframework.com/documentation/latest/api/scala/index.html#play.api.data.package" target="_blank">form widgets</a>
+provided with Play Framework feature a minimum of parameters and have an arcane syntax as a result.
 Those widgets are rendered within a &lt;dl/&gt; tags, which is only useful for a narrow range of scenarios.
 Most HTML5 features are not supported &quot;out of the box&quot; so it is common to spend a lot of time crafting wrappers around the standard widgets.</p><p>The <a href="https://github.com/adrianhurt/play-bootstrap" target="_blank">Play Bootstrap</a> widgets require Twitter Bootstrap,
-but otherwise its API is similar to the Play Framework form widget API.</p><p>This package produces output that closely resembles Play Bootstrap's output,
+but otherwise its API is similar to the Play Framework form widget API.</p><p><a href="http://www.lihaoyi.com/scalatags/" target="_blank">ScalaTags</a> is another library for generating HTML using Scala.</p><p>This package produces output that closely resembles Play Bootstrap's output,
 but it uses many explicit parameters instead of following the Play Framework API approach.
 Widgets in the <code>views.html.htmlForm</code> package are HTML5 compatible,
 and include a date picker, a CSRF form helper, <code>checkbox</code>es, <code>select</code>s, and various flavors of <code>input</code> for
@@ -188,7 +189,7 @@ Two flavors of modal dialog are provided.</p></div><dl class="attributes block">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">These methods generate HTML as a <code>String</code>.</p><div class="fullcomment"><div class="comment cmt"><p>These methods generate HTML as a <code>String</code>. The following CSS classes are used:</p><p><code>btn</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#buttons</p><p><code>checked</code>   - Applied to the enclosing &lt;div&gt; around a checkbox.</p><p><code>form-control</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example</p><p><code>input-group</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example</p><p><code>input-group-addon</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-inline</p><p><code>input-group-addon-prefix</code> - Used by Twitter bootstrap; see http://codepen.io/swhdesigns/pen/bNwVgG</p><p><code>bigCheckbox</code> - Applied to a multivalue checkbox (multiCheckbox)</p><p><code>mediumCheckbox</code> - Applied to a checkbox.</p><p><code>panel</code> - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels</p><p><code>panel-default</code> - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels</p><p><code>col-md-N</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#grid</p><p><code>preFlight</code> - Warns that an associated widget is in a non-ready state.</p></div></div>
+      <p class="shortcomment cmt">These methods generate HTML as a <code>String</code>.</p><div class="fullcomment"><div class="comment cmt"><p>These methods generate HTML as a <code>String</code>. The following CSS classes are used:</p><p><code>btn</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#buttons" target="_blank">http://getbootstrap.com/css/#buttons</a></p><p><code>checked</code>   - Applied to the enclosing &lt;div&gt; around a checkbox.</p><p><code>form-control</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#forms-example" target="_blank">http://getbootstrap.com/css/#forms-example</a></p><p><code>input-group</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#forms-example" target="_blank">http://getbootstrap.com/css/#forms-example</a></p><p><code>input-group-addon</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#forms-inline" target="_blank">http://getbootstrap.com/css/#forms-inline</a></p><p><code>input-group-addon-prefix</code> - Used by Twitter bootstrap; see <a href="http://codepen.io/swhdesigns/pen/bNwVgG" target="_blank">http://codepen.io/swhdesigns/pen/bNwVgG</a></p><p><code>bigCheckbox</code> - Applied to a multivalue checkbox (multiCheckbox)</p><p><code>mediumCheckbox</code> - Applied to a checkbox.</p><p><code>panel</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/components/#panels" target="_blank">http://getbootstrap.com/components/#panels</a></p><p><code>panel-default</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/components/#panels" target="_blank">http://getbootstrap.com/components/#panels</a></p><p><code>col-md-N</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#grid" target="_blank">http://getbootstrap.com/css/#grid</a></p><p><code>preFlight</code> - Warns that an associated widget is in a non-ready state.</p></div></div>
     </li><li name="views.html.htmlForm.StringOrSeq" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="StringOrSeq"></a>
       <a id="StringOrSeq:StringOrSeq"></a>
@@ -290,7 +291,7 @@ Two flavors of modal dialog are provided.</p></div><dl class="attributes block">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Generic low-level method</p>
     </li></ol>
             </div>
 

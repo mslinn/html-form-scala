@@ -108,11 +108,12 @@
         <img src="../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">This is yet another approach to providing HTML form widgets for Play Framework.</p><div class="fullcomment"><div class="comment cmt"><p>This is yet another approach to providing HTML form widgets for Play Framework.
-The form widgets provided with Play Framework feature a minimum of parameters and have an arcane syntax as a result.
+      <p class="shortcomment cmt">This is yet another approach to providing HTML form widgets for Play Framework using Scala.</p><div class="fullcomment"><div class="comment cmt"><p>This is yet another approach to providing HTML form widgets for Play Framework using Scala.
+The <a href="https://playframework.com/documentation/latest/api/scala/index.html#play.api.data.package" target="_blank">form widgets</a>
+provided with Play Framework feature a minimum of parameters and have an arcane syntax as a result.
 Those widgets are rendered within a &lt;dl/&gt; tags, which is only useful for a narrow range of scenarios.
 Most HTML5 features are not supported &quot;out of the box&quot; so it is common to spend a lot of time crafting wrappers around the standard widgets.</p><p>The <a href="https://github.com/adrianhurt/play-bootstrap" target="_blank">Play Bootstrap</a> widgets require Twitter Bootstrap,
-but otherwise its API is similar to the Play Framework form widget API.</p><p>This package produces output that closely resembles Play Bootstrap's output,
+but otherwise its API is similar to the Play Framework form widget API.</p><p><a href="http://www.lihaoyi.com/scalatags/" target="_blank">ScalaTags</a> is another library for generating HTML using Scala.</p><p>This package produces output that closely resembles Play Bootstrap's output,
 but it uses many explicit parameters instead of following the Play Framework API approach.
 Widgets in the <code>views.html.htmlForm</code> package are HTML5 compatible,
 and include a date picker, a CSRF form helper, <code>checkbox</code>es, <code>select</code>s, and various flavors of <code>input</code> for
