@@ -5,22 +5,44 @@ import play.api.data.{Field, Form}
 import play.api.mvc.Call
 import scala.language.implicitConversions
 
-case class FadeValue(value: Boolean) extends AnyVal
+protected case class FadeValue(value: Boolean) extends AnyVal
 
 /** @see http://stackoverflow.com/a/3508555/553865 */
-sealed trait StringOrSeq[-T]
+protected sealed trait StringOrSeq[-T]
 
-object StringOrSeq {
+protected object StringOrSeq {
   implicit object SeqWitness extends StringOrSeq[Seq[String]]
   implicit object StringWitness extends StringOrSeq[String]
 }
 
+/** These methods generate HTML as a `String`. The following CSS classes are used:
+  *
+  * `btn` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#buttons
+  * `checked`   - Applied to the enclosing &lt;div&gt; around a checkbox.
+  * `form-control` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+  * `input-group` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+  * `input-group-addon` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-inline
+  * `input-group-addon-prefix` - Used by Twitter bootstrap; see http://codepen.io/swhdesigns/pen/bNwVgG
+  * `bigCheckbox` - Applied to a multivalue checkbox (multiCheckbox)
+  * `mediumCheckbox` - Applied to a checkbox.
+  * `panel` - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
+  * `panel-default` - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
+  * `col-md-N` - Used by Twitter bootstrap; see
+  * `preFlight` - Warns that an associated widget is in a non-ready state. */
 object HtmlForm {
+  /** @return the value of [[Field]] */
   def value(fieldName: String)(implicit form: Form[_]): String = form(fieldName).value.mkString(",")
 
+  /** @return an HTML checkbox with CSS class `mediumCheckbox`,
+    *         enclosed within a &lt;div&gt; with id `${ fieldName }_container` and the CSS class `checked`.
+    *         If it is more convenient to pass the the [[Field]] instead of the name of the field, consider using the `checked` method.
+    *         If the `checked` status needs to be independently set, consider using the `checkedFromValue` method.
+    * @param fieldName if the [[Field]] with the name `fieldName` has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
+    * @param classes Add this value of this parameter to the enclosing div's CSS classes.
+    * @param label if non-empty, the label follows the checkbox */
   def checkedFromName(fieldName: String, label: String="", classes: String="")
                      (implicit form: Form[_]): String = {
-    val ckd = if (value(fieldName)=="true") "checked='checked'" else ""
+    val ckd = if (List("true", "on", "enabled").contains(value(fieldName))) "checked='checked'" else ""
     val fieldId = fieldName.replace('.', '_').replace('[', '_').replace("]", "")
     s"""<div class="checked $classes" id="${ fieldId }_container">
        |  <input type="checkbox" name="$fieldName" id="$fieldId" value="true" $ckd class="mediumCheckbox">
@@ -29,6 +51,12 @@ object HtmlForm {
        |""".stripMargin
   }
 
+  /** @return an HTML checkbox with CSS class `mediumCheckbox`,
+    *         enclosed within a &lt;div&gt; with id `${ fieldName }_container` and the CSS class `checked`.
+    *         If the `checked` status needs to be set from the value of the [[Field]], consider using the `checkedFromName` method.
+    * @param fieldName if the [[Field]] with the name `fieldName` has the value `true` then set the checkbox's `checked` attribute.
+    * @param classes Add this value of this parameter to the enclosing div's CSS classes.
+    * @param label if non-empty, the label follows the checkbox */
   def checkedFromValue(fieldName: String, value: Boolean, label: String="", classes: String=""): String = {
     val ckd = if (value) "checked='checked'" else ""
     val fieldId = fieldName.replace('.', '_').replace('[', '_').replace("]", "")
@@ -39,23 +67,48 @@ object HtmlForm {
        |""".stripMargin
   }
 
-  /** Compares against "true" and "false" values */
+  /** @return an HTML checkbox with CSS class `mediumCheckbox`,
+    *         enclosed within a &lt;div&gt; with id `${ fieldName }_container` and the CSS class `checked`.
+    *         If it is more convenient to pass the name of the field instead of the [[Field]] itself, consider using the `checkedFromName` method.
+    *         If the `checked` status needs to be independently set, consider using the `checkedFromValue` method.
+    * @param field if the given [[Field]] has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
+    * @param classes Add this value of this parameter to the enclosing div's CSS classes.
+    * @param label if non-empty, the label follows the checkbox */
   def checked(field: Field, label: String="", classes: String="")
              (implicit form: Form[_]): String = {
-      val ckd = if (List("true","on", "enabled").contains(value(field.name))) "checked='checked'" else ""
-      s"""<div class="checked $classes" id="${ field.id }_container">
-         |  <input type="checkbox" name="${ field.name }" id="${ field.id }" value="true" $ckd class="mediumCheckbox">
-         |  ${ if (label.trim.isEmpty) "" else s"$label" }
-         |</div>
-         |""".stripMargin
-    }
+    val ckd = if (List("true", "on", "enabled").contains(value(field.name))) "checked='checked'" else ""
+    s"""<div class="checked $classes" id="${ field.id }_container">
+       |  <input type="checkbox" name="${ field.name }" id="${ field.id }" value="true" $ckd class="mediumCheckbox">
+       |  ${ if (label.trim.isEmpty) "" else s"$label" }
+       |</div>
+       |""".stripMargin
+  }
 
-  /** @param optionValues if nonEmpty generate a <select> with the specified <option> name/value pairs
-    * @param selectedValues if `optionValues` is nonEmpty use these values to add select attribute to <option>s
-    * @param asCents implies isCurrency
-    * @param containerClasses CSS classes applied to containing div
-    * @param labelClasses CSS class applied to label preceding the input tag
-    * @param style CSS style applied to input tag */
+  /** Generates an &gt;input&lt; tag.
+    * @param field [[Form]] [[Field]] that supplies values for this widget instance, and is updated by submitting the HTML form containing this widget.
+    * @param label Rendered within a &lt;label/&gt; tag associated with the generated &gt;input/&lt; tag.
+    * @param asCode causes the displayed value to be rendered with a monospaced font.
+    * @param containerClasses CSS classes applied to the containing &lt;div/&gt;.
+    * @param helpText rendered to a `title` attribute so it appears when hovering the cursor over the widget.
+    * @param isCurrency the value is rendered with a monospaced font and with a prefix "cap" which contains a dollar sign.
+    * @param asButton renders a &lt;button&gt; tag.
+    * @param asCents divides the value by 100 and uses two decimal places; implies `isCurrency`.
+    * @param isEmail renders an HTML5 `type='email'` attribute; browsers validate the value before allowing the form to be submitted.
+    * @param isHidden renders an `type='hidden'` attribute so the widget does not appear, yet it contains an immutable value.
+    * @param isNumeric renders an HTML5 `type='number' step='any'` attribute. Various browsers might render this type of widget differently.
+    * @param isPassword renders an `type='password'` attribute so the value typed by the user into the widget is masked.
+    * @param isPercentage the value is rendered with a monospaced font and with a suffix "cap" which contains a percent sign.
+    * @param isUrl renders an `type='url'` attribute; browsers validate the format but not this value before allowing the form to be submitted.
+    * @param labelClasses CSS class applied to label preceding the &lt;input&gt; tag.
+    * @param maybeMin If `Some(value)` is provided, the value is rendered as an `min='value'` attribute.
+    *                 Should be used with a numeric value.
+    * @param maybeReady Displays messages if the tuple sequence does not contain a true value.
+    * @param optionValues if nonEmpty generate a &lt;select&gt; with the specified &lt;option&gt; name/value pairs.
+    * @param maybePlaceholder If `Some(value)` provided, generate an HTML5 `placeholder='value'` attribute.
+    * @param selectedValues if `optionValues` is nonEmpty use these values to add select attribute to &lt;option&gt;s.
+    * @param isRequired Generate an `required` attribute if `true`.
+    * @param style CSS style applied to input tag.
+    * @param suffixValue Generate an end "cap" with the provided value. */
   def inputter(
     field: Field,
     label: String = "",
@@ -183,8 +236,10 @@ object HtmlForm {
        |""".stripMargin
   }
 
+  /** @return If `ok`, merely return the given `msg`, else return a &lt;span&gt; tag decorated with `preFlight` class and containing the given `msg`. */
   def preFlightWarning(msg: String, ok: Boolean): String = if (ok) msg else s"""<span class="preFlight">$msg</span>"""
 
+  /** Text message that can be presented in a variety of ways. */
   def notProvided(
    value: Any,
    msg: String = "Not provided",
@@ -216,11 +271,18 @@ object HtmlForm {
     }
   }
 
-  def expandedContent[T: StringOrSeq](content: T): String = content match {
+  protected def expandedContent[T: StringOrSeq](content: T): String = content match {
     case string: String   => string
     case seq: Seq[_] => seq.mkString("\n")
   }
 
+  /** Displays as a table with a heading; the height of the box depends on its contents.
+    * See http://getbootstrap.com/components/#panels
+    * @param title Heading for the panel
+    * @param id If non-empty, provides the HTML id for the entire panel
+    * @param columns number of Twitter columns the panel uses; sets the width of the panel
+    * @param content `tableRow`s concatenated together, for example:
+    *                {{{Seq(tableRow("abc"), tableRow("def")).mkString("\n")}}} */
   def panelTable[T: StringOrSeq](title: String, id: String="", columns: Int=6)
                 (content: => T): String =
     s"""<div class="panel panel-default col-md-$columns"${ if (id.trim.nonEmpty) s" id='${ id.trim }'" else "" }>

@@ -86,7 +86,6 @@ publishSite
 // sbt-ghpages settings
 enablePlugins(GhpagesPlugin)
 git.remoteRepo := "git@github.com:mslinn/html-form-scala.git"
-//git.remoteRepo := jgitSetting.value
 
 /*doc in Compile ~= { (value: java.io.File) => // enhance doc command to also replace the CSS
   import java.nio.file.{Files, Paths, StandardCopyOption}
