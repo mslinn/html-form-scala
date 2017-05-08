@@ -17,27 +17,27 @@ protected object StringOrSeq {
 
 /** These methods generate HTML as a `String`. The following CSS classes are used:
   *
-  * `btn` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#buttons
+  * `btn` - Used by Twitter bootstrap; see [[http://getbootstrap.com/css/#buttons]]
   *
   * `checked`   - Applied to the enclosing &lt;div&gt; around a checkbox.
   *
-  * `form-control` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+  * `form-control` - Used by Twitter bootstrap; see [[http://getbootstrap.com/css/#forms-example]]
   *
-  * `input-group` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+  * `input-group` - Used by Twitter bootstrap; see [[http://getbootstrap.com/css/#forms-example]]
   *
-  * `input-group-addon` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-inline
+  * `input-group-addon` - Used by Twitter bootstrap; see [[http://getbootstrap.com/css/#forms-inline]]
   *
-  * `input-group-addon-prefix` - Used by Twitter bootstrap; see http://codepen.io/swhdesigns/pen/bNwVgG
+  * `input-group-addon-prefix` - Used by Twitter bootstrap; see [[http://codepen.io/swhdesigns/pen/bNwVgG]]
   *
   * `bigCheckbox` - Applied to a multivalue checkbox (multiCheckbox)
   *
   * `mediumCheckbox` - Applied to a checkbox.
   *
-  * `panel` - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
+  * `panel` - Used by Twitter bootstrap; see [[http://getbootstrap.com/components/#panels]]
   *
-  * `panel-default` - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
+  * `panel-default` - Used by Twitter bootstrap; see [[http://getbootstrap.com/components/#panels]]
   *
-  * `col-md-N` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#grid
+  * `col-md-N` - Used by Twitter bootstrap; see [[http://getbootstrap.com/css/#grid]]
   *
   * `preFlight` - Warns that an associated widget is in a non-ready state. */
 object HtmlForm {
