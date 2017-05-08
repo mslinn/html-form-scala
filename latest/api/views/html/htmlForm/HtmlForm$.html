@@ -49,7 +49,18 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/html-form-scala/tree/master/src/main/scala/views/html/htmlForm/HtmlForm.scala" target="_blank">HtmlForm.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>These methods generate HTML as a <code>String</code>. The following CSS classes are used:</p><p><code>btn</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#buttons
+<code>checked</code>   - Applied to the enclosing &lt;div&gt; around a checkbox.
+<code>form-control</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+<code>input-group</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+<code>input-group-addon</code> - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-inline
+<code>input-group-addon-prefix</code> - Used by Twitter bootstrap; see http://codepen.io/swhdesigns/pen/bNwVgG
+<code>bigCheckbox</code> - Applied to a multivalue checkbox (multiCheckbox)
+<code>mediumCheckbox</code> - Applied to a checkbox.
+<code>panel</code> - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
+<code>panel-default</code> - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
+<code>col-md-N</code> - Used by Twitter bootstrap; see
+<code>preFlight</code> - Warns that an associated widget is in a non-ready state.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/html-form-scala/tree/master/src/main/scala/views/html/htmlForm/HtmlForm.scala" target="_blank">HtmlForm.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -162,7 +173,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="views.html.htmlForm.HtmlForm#checked" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="views.html.htmlForm.HtmlForm#checked" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="checked(field:play.api.data.Field,label:String,classes:String)(implicitform:play.api.data.Form[_]):String"></a>
       <a id="checked(Field,String,String)(Form[_]):String"></a>
       <h4 class="signature">
@@ -178,8 +189,11 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Compares against &quot;true&quot; and &quot;false&quot; values</p>
-    </li><li name="views.html.htmlForm.HtmlForm#checkedFromName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">field</dt><dd class="cmt"><p>if the given <span class="extype" name="Field">Field</span> has the value <code>true</code>, <code>on</code> or <code>enabled</code>, then set the checkbox's <code>checked</code> attribute.</p></dd><dt class="param">label</dt><dd class="cmt"><p>if non-empty, the label follows the checkbox</p></dd><dt class="param">classes</dt><dd class="cmt"><p>Add this value of this parameter to the enclosing div's CSS classes.</p></dd><dt>returns</dt><dd class="cmt"><p>an HTML checkbox with CSS class <code>mediumCheckbox</code>,
+        enclosed within a &lt;div&gt; with id <code>${ fieldName }_container</code> and the CSS class <code>checked</code>.
+        If it is more convenient to pass the name of the field instead of the <span class="extype" name="Field">Field</span> itself, consider using the <code>checkedFromName</code> method.
+        If the <code>checked</code> status needs to be independently set, consider using the <code>checkedFromValue</code> method.</p></dd></dl></div>
+    </li><li name="views.html.htmlForm.HtmlForm#checkedFromName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="checkedFromName(fieldName:String,label:String,classes:String)(implicitform:play.api.data.Form[_]):String"></a>
       <a id="checkedFromName(String,String,String)(Form[_]):String"></a>
       <h4 class="signature">
@@ -195,8 +209,11 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="views.html.htmlForm.HtmlForm#checkedFromValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">fieldName</dt><dd class="cmt"><p>if the <span class="extype" name="Field">Field</span> with the name <code>fieldName</code> has the value <code>true</code>, <code>on</code> or <code>enabled</code>, then set the checkbox's <code>checked</code> attribute.</p></dd><dt class="param">label</dt><dd class="cmt"><p>if non-empty, the label follows the checkbox</p></dd><dt class="param">classes</dt><dd class="cmt"><p>Add this value of this parameter to the enclosing div's CSS classes.</p></dd><dt>returns</dt><dd class="cmt"><p>an HTML checkbox with CSS class <code>mediumCheckbox</code>,
+        enclosed within a &lt;div&gt; with id <code>${ fieldName }_container</code> and the CSS class <code>checked</code>.
+        If it is more convenient to pass the the <span class="extype" name="Field">Field</span> instead of the name of the field, consider using the <code>checked</code> method.
+        If the <code>checked</code> status needs to be independently set, consider using the <code>checkedFromValue</code> method.</p></dd></dl></div>
+    </li><li name="views.html.htmlForm.HtmlForm#checkedFromValue" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="checkedFromValue(fieldName:String,value:Boolean,label:String,classes:String):String"></a>
       <a id="checkedFromValue(String,Boolean,String,String):String"></a>
       <h4 class="signature">
@@ -212,7 +229,9 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">fieldName</dt><dd class="cmt"><p>if the <span class="extype" name="Field">Field</span> with the name <code>fieldName</code> has the value <code>true</code> then set the checkbox's <code>checked</code> attribute.</p></dd><dt class="param">label</dt><dd class="cmt"><p>if non-empty, the label follows the checkbox</p></dd><dt class="param">classes</dt><dd class="cmt"><p>Add this value of this parameter to the enclosing div's CSS classes.</p></dd><dt>returns</dt><dd class="cmt"><p>an HTML checkbox with CSS class <code>mediumCheckbox</code>,
+        enclosed within a &lt;div&gt; with id <code>${ fieldName }_container</code> and the CSS class <code>checked</code>.
+        If the <code>checked</code> status needs to be set from the value of the <span class="extype" name="Field">Field</span>, consider using the <code>checkedFromName</code> method.</p></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -270,7 +289,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="views.html.htmlForm.HtmlForm#expandedContent" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="views.html.htmlForm.HtmlForm#expandedContent" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="expandedContent[T](content:T)(implicitevidence$1:views.html.htmlForm.StringOrSeq[T]):String"></a>
       <a id="expandedContent[T](T)(StringOrSeq[T]):String"></a>
       <h4 class="signature">
@@ -286,7 +305,7 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -360,7 +379,8 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">containerClasses</dt><dd class="cmt"><p>CSS classes applied to containing div</p></dd><dt class="param">asCents</dt><dd class="cmt"><p>implies isCurrency</p></dd><dt class="param">labelClasses</dt><dd class="cmt"><p>CSS class applied to label preceding the input tag</p></dd><dt class="param">optionValues</dt><dd class="cmt"><p>if nonEmpty generate a <select> with the specified <option> name/value pairs</p></dd><dt class="param">selectedValues</dt><dd class="cmt"><p>if <code>optionValues</code> is nonEmpty use these values to add select attribute to <option>s</p></dd><dt class="param">style</dt><dd class="cmt"><p>CSS style applied to input tag</p></dd></dl></div>
+      <p class="shortcomment cmt">Generates an &gt;input&lt; tag.</p><div class="fullcomment"><div class="comment cmt"><p>Generates an &gt;input&lt; tag.</p></div><dl class="paramcmts block"><dt class="param">field</dt><dd class="cmt"><p><span class="extype" name="Form">Form</span> <span class="extype" name="Field">Field</span> that supplies values for this widget instance, and is updated by submitting the HTML form containing this widget.</p></dd><dt class="param">label</dt><dd class="cmt"><p>Rendered within a &lt;label/&gt; tag associated with the generated &gt;input/&lt; tag.</p></dd><dt class="param">asCode</dt><dd class="cmt"><p>causes the displayed value to be rendered with a monospaced font.</p></dd><dt class="param">containerClasses</dt><dd class="cmt"><p>CSS classes applied to the containing &lt;div/&gt;.</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>rendered to a <code>title</code> attribute so it appears when hovering the cursor over the widget.</p></dd><dt class="param">isCurrency</dt><dd class="cmt"><p>the value is rendered with a monospaced font and with a prefix &quot;cap&quot; which contains a dollar sign.</p></dd><dt class="param">asButton</dt><dd class="cmt"><p>renders a &lt;button&gt; tag.</p></dd><dt class="param">asCents</dt><dd class="cmt"><p>divides the value by 100 and uses two decimal places; implies <code>isCurrency</code>.</p></dd><dt class="param">isEmail</dt><dd class="cmt"><p>renders an HTML5 <code>type='email'</code> attribute; browsers validate the value before allowing the form to be submitted.</p></dd><dt class="param">isHidden</dt><dd class="cmt"><p>renders an <code>type='hidden'</code> attribute so the widget does not appear, yet it contains an immutable value.</p></dd><dt class="param">isNumeric</dt><dd class="cmt"><p>renders an HTML5 <code>type='number' step='any'</code> attribute. Various browsers might render this type of widget differently.</p></dd><dt class="param">isPassword</dt><dd class="cmt"><p>renders an <code>type='password'</code> attribute so the value typed by the user into the widget is masked.</p></dd><dt class="param">isPercentage</dt><dd class="cmt"><p>the value is rendered with a monospaced font and with a suffix &quot;cap&quot; which contains a percent sign.</p></dd><dt class="param">isUrl</dt><dd class="cmt"><p>renders an <code>type='url'</code> attribute; browsers validate the format but not this value before allowing the form to be submitted.</p></dd><dt class="param">labelClasses</dt><dd class="cmt"><p>CSS class applied to label preceding the &lt;input&gt; tag.</p></dd><dt class="param">maybeMin</dt><dd class="cmt"><p>If <code>Some(value)</code> is provided, the value is rendered as an <code>min='value'</code> attribute.
+                Should be used with a numeric value.</p></dd><dt class="param">maybeReady</dt><dd class="cmt"><p>Displays messages if the tuple sequence does not contain a true value.</p></dd><dt class="param">optionValues</dt><dd class="cmt"><p>if nonEmpty generate a &lt;select&gt; with the specified &lt;option&gt; name/value pairs.</p></dd><dt class="param">maybePlaceholder</dt><dd class="cmt"><p>If <code>Some(value)</code> provided, generate an HTML5 <code>placeholder='value'</code> attribute.</p></dd><dt class="param">selectedValues</dt><dd class="cmt"><p>if <code>optionValues</code> is nonEmpty use these values to add select attribute to &lt;option&gt;s.</p></dd><dt class="param">isRequired</dt><dd class="cmt"><p>Generate an <code>required</code> attribute if <code>true</code>.</p></dd><dt class="param">style</dt><dd class="cmt"><p>CSS style applied to input tag.</p></dd><dt class="param">suffixValue</dt><dd class="cmt"><p>Generate an end &quot;cap&quot; with the provided value.</p></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -428,7 +448,7 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Text message that can be presented in a variety of ways.</p>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <a id="notify():Unit"></a>
@@ -497,7 +517,7 @@
       </a>
     </span>
       
-    </li><li name="views.html.htmlForm.HtmlForm#panelTable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="views.html.htmlForm.HtmlForm#panelTable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="panelTable[T](title:String,id:String,columns:Int)(content:=&gt;T)(implicitevidence$2:views.html.htmlForm.StringOrSeq[T]):String"></a>
       <a id="panelTable[T](String,String,Int)(⇒T)(StringOrSeq[T]):String"></a>
       <h4 class="signature">
@@ -513,8 +533,9 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="views.html.htmlForm.HtmlForm#preFlightWarning" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Displays as a table with a heading; the height of the box depends on its contents.</p><div class="fullcomment"><div class="comment cmt"><p>Displays as a table with a heading; the height of the box depends on its contents.
+See http://getbootstrap.com/components/#panels</p></div><dl class="paramcmts block"><dt class="param">title</dt><dd class="cmt"><p>Heading for the panel</p></dd><dt class="param">id</dt><dd class="cmt"><p>If non-empty, provides the HTML id for the entire panel</p></dd><dt class="param">columns</dt><dd class="cmt"><p>number of Twitter columns the panel uses; sets the width of the panel</p></dd><dt class="param">content</dt><dd class="cmt"><p><code>tableRow</code>s concatenated together, for example:</p><pre><span class="std">Seq</span>(tableRow(<span class="lit">"abc"</span>), tableRow(<span class="lit">"def"</span>)).mkString(<span class="lit">"\n"</span>)</pre></dd></dl></div>
+    </li><li name="views.html.htmlForm.HtmlForm#preFlightWarning" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="preFlightWarning(msg:String,ok:Boolean):String"></a>
       <a id="preFlightWarning(String,Boolean):String"></a>
       <h4 class="signature">
@@ -530,7 +551,7 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>If <code>ok</code>, merely return the given <code>msg</code>, else return a &lt;span&gt; tag decorated with <code>preFlight</code> class and containing the given <code>msg</code>.</p></dd></dl></div>
     </li><li name="views.html.htmlForm.HtmlForm#selector" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="selector(field:play.api.data.Field,options:Seq[(String,String)],label:String):String"></a>
       <a id="selector(Field,Seq[(String,String)],String):String"></a>
@@ -684,7 +705,7 @@
       </a>
     </span>
       
-    </li><li name="views.html.htmlForm.HtmlForm#value" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="views.html.htmlForm.HtmlForm#value" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="value(fieldName:String)(implicitform:play.api.data.Form[_]):String"></a>
       <a id="value(String)(Form[_]):String"></a>
       <h4 class="signature">
@@ -700,7 +721,7 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the value of <span class="extype" name="Field">Field</span></p></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
