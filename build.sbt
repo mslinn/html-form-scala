@@ -50,6 +50,9 @@ libraryDependencies ++= Seq(
   "com.typesafe.play"       %% "play"                 % playVer   % Provided withSources(),
   "com.typesafe.play"       %% "filters-helpers"      % playVer   % Provided withSources(),
   //
+  "com.typesafe.play"       %% "play"                 % playVer   % Docs,
+  "com.typesafe.play"       %% "filters-helpers"      % playVer   % Docs,
+  //
   "org.scalatest"           %% "scalatest"            % "3.0.1"   % Test withSources(),
   "junit"                   %  "junit"                % "4.12"    % Test,
   "org.webjars"             %  "bootstrap-datepicker" % "1.6.1"   % Test,

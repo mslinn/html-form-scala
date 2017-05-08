@@ -18,16 +18,27 @@ protected object StringOrSeq {
 /** These methods generate HTML as a `String`. The following CSS classes are used:
   *
   * `btn` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#buttons
+  *
   * `checked`   - Applied to the enclosing &lt;div&gt; around a checkbox.
+  *
   * `form-control` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+  *
   * `input-group` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-example
+  *
   * `input-group-addon` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#forms-inline
+  *
   * `input-group-addon-prefix` - Used by Twitter bootstrap; see http://codepen.io/swhdesigns/pen/bNwVgG
+  *
   * `bigCheckbox` - Applied to a multivalue checkbox (multiCheckbox)
+  *
   * `mediumCheckbox` - Applied to a checkbox.
+  *
   * `panel` - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
+  *
   * `panel-default` - Used by Twitter bootstrap; see http://getbootstrap.com/components/#panels
-  * `col-md-N` - Used by Twitter bootstrap; see
+  *
+  * `col-md-N` - Used by Twitter bootstrap; see http://getbootstrap.com/css/#grid
+  *
   * `preFlight` - Warns that an associated widget is in a non-ready state. */
 object HtmlForm {
   /** @return the value of [[Field]] */
@@ -85,7 +96,7 @@ object HtmlForm {
   }
 
   /** Generates an &gt;input&lt; tag.
-    * @param field [[Form]] [[Field]] that supplies values for this widget instance, and is updated by submitting the HTML form containing this widget.
+    * @param field [[play.api.data.Form]] [[Field]] that supplies values for this widget instance, and is updated by submitting the HTML form containing this widget.
     * @param label Rendered within a &lt;label/&gt; tag associated with the generated &gt;input/&lt; tag.
     * @param asCode causes the displayed value to be rendered with a monospaced font.
     * @param containerClasses CSS classes applied to the containing &lt;div/&gt;.
