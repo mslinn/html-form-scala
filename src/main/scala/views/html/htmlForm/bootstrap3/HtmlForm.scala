@@ -1,4 +1,4 @@
-package views.html.htmlForm
+package views.html.htmlForm.bootstrap3
 
 import currency.Currency
 import play.api.data.{Field, Form}
