@@ -20,7 +20,7 @@ Widgets in the `views.html.htmlForm` package are HTML5 compatible,
 and include a CSRF form helper.
 
 Widgets related to Twitter Bootstrap 3.x are provided in the `views.html.htmlForm.bootstrap3` package.
-Two flavors of modal dialog are provided and a date picker. 
+Two flavors of modal dialog are provided, smart tabs and a date picker. 
 The `HtmlForm` object contains `checkbox`es, `select`s, and various flavors of `input` for 
 email, URLs, currency, passwords, percentages, range-limited numeric values and much more.
 
@@ -29,7 +29,7 @@ Add this to your project's `build.sbt`:
 
     resolvers += "micronautics/play on bintray" at "http://dl.bintray.com/micronautics/play"
 
-    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.5" withSources()
+    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.6" withSources()
 
 ## Scaladoc
 [Here](http://mslinn.github.io/html-form-scala/latest/api/)

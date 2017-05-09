@@ -6,8 +6,10 @@ import play.api.data.Field
 import play.twirl.api.Html
 
 /** Although the `datePicker` is not dependant on Twitter Bootstrap, this object wraps in Bootstrap-centric HTML and CSS.
-  * See [[https://github.com/eternicode/bootstrap-datepicker]]
-  * See [[http://bootstrap-datepicker.readthedocs.io/en/latest/]] */
+  * In the following usage example, `_form` is a [[play.api.data.Form]] instance.
+  * {{{datePicker(name="from", field=_form("from"), label="Valid from")}}}
+  * @see [[https://github.com/eternicode/bootstrap-datepicker]]
+  * and [[http://bootstrap-datepicker.readthedocs.io/en/latest/]]. */
 object datePicker {
   val format = "yyyy-MM-dd"
   val dateFormatter: DateTimeFormatter = DateTimeFormat.forPattern(format)

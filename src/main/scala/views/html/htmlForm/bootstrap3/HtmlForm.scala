@@ -78,7 +78,9 @@ object HtmlForm {
        |""".stripMargin
   }
 
-  /** @return an HTML checkbox with CSS class `mediumCheckbox`,
+  /** In the follwing usage example `_form` is a [[Form]] instance.
+    * {{{checked(_form("isComplete"), label="Disable")}}}
+    * @return an HTML checkbox with CSS class `mediumCheckbox`,
     *         enclosed within a &lt;div&gt; with id `${ fieldName }_container` and the CSS class `checked`.
     *         If it is more convenient to pass the name of the field instead of the [[Field]] itself, consider using the `checkedFromName` method.
     *         If the `checked` status needs to be independently set, consider using the `checkedFromValue` method.
@@ -96,6 +98,13 @@ object HtmlForm {
   }
 
   /** Generates an &gt;input&lt; tag.
+    * The following usage examples assume `_form` is a [[Form]] instance:
+    * {{{ Seq(
+    *   inputter(_form("userId"), label=s"User ID", asCode=true),
+    *   inputter(_form("resellerCode"), label="Reseller code"),
+    *   inputter(_form("id"), isHidden=true),
+    *   inputter(_form("customerAddress.name"), label="Name", maybePlaceholder=Some("Name"))
+    * ).mkString("\n") }}}
     * @param field [[play.api.data.Form]] [[Field]] that supplies values for this widget instance, and is updated by submitting the HTML form containing this widget.
     * @param label Rendered within a &lt;label/&gt; tag associated with the generated &gt;input/&lt; tag.
     * @param asCode causes the displayed value to be rendered with a monospaced font.
@@ -289,6 +298,16 @@ object HtmlForm {
 
   /** Displays as a table with a heading; the height of the box depends on its contents.
     * See http://getbootstrap.com/components/#panels
+    *
+    * In the following usage example, `_form` is a [[Form]] instance.
+    * {{{panelTable("Financial Details", id="financialDetails") {
+    *     Seq(
+    *       tableRow("Currency", inputter(_form("paymentDetail.mcCurrency"), maybePlaceholder=Some("USD"))),
+    *       tableRow("Currency", inputter(_form("paymentDetail.mcCurrency"), maybePlaceholder=Some("USD"))),
+    *       tableRow("Fee",      inputter(_form("paymentDetail.mcFee"),      maybePlaceholder=Some("(in USD)"), isCurrency=true)),
+    *       tableRow("Gross",    inputter(_form("paymentDetail.mcGross"),    maybePlaceholder=Some("(in USD)"), isCurrency=true)),
+    *       tableRow("Tax",      inputter(_form("paymentDetail.tax"),        maybePlaceholder=Some("(in USD)"), isCurrency=true))
+    *     )}}}}
     * @param title Heading for the panel
     * @param id If non-empty, provides the HTML id for the entire panel
     * @param columns number of Twitter columns the panel uses; sets the width of the panel
@@ -336,6 +355,8 @@ object HtmlForm {
          |""".stripMargin
   }
 
+  /** In the following usage example, RoleEnum is a Java enum, and `_form` is a [[Form]] instance.
+    * {{{selector(_form("roleEnum"),  label="Role type", options=RoleEnum.values.toSeq.map(v => (v.name, v.name)))}}} */
   def selector(field: Field, options: Seq[(String, String)], label: String=""): String = {
     val maybeValue: Option[String] = field.value
     s"""<div>${ if (label.isEmpty) "" else s"<span class='selectorLabel'>$label</span>" }
