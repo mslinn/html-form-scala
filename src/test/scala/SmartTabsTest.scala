@@ -1,3 +1,4 @@
+import com.micronautics.Id
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest._
@@ -5,25 +6,20 @@ import org.scalatest.Matchers._
 import play.twirl.api.Html
 import views.html.htmlForm.bootstrap3.{LazyParams, SmartTab, SmartTabs}
 
-// Structural types cannot use value classes in method parameter or return types
-// See http://docs.scala-lang.org/overviews/core/value-classes.html
-case class Id(value: Long) /*extends AnyVal*/
-
 @RunWith(classOf[JUnitRunner])
 class SmartTabsTest extends WordSpec with MustMatchers {
-
   def addressTab: SmartTab[Long] = SmartTab[Long](
     href = "#Address",
     label = "Address",
     helpText = s"Customer address",
-    maybeLazyParams = Some(LazyParams("entity", Id(0L)))
-  ) {Html("<p>Blah blah</p>")}
+    maybeLazyParams = Some(LazyParams("entity", Id[Long](0L)))
+  ) { Html("<p>Blah blah</p>") }
 
   def companyTab: SmartTab[Long] = SmartTab[Long](
     href = "#Company",
     label = "Company",
     helpText = s"Company details"
-  ) {Html("<p>Blah blah</p>")}
+  ) { Html("<p>Blah blah</p>") }
 
   val smartTabs = new SmartTabs[Long](None, List(companyTab, addressTab))
 
