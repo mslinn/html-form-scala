@@ -100,6 +100,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="views.html.htmlForm.bootstrap3.LazyParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LazyParams[U,T&lt;:AnyRef{defvalue:U}]extendsProductwithSerializable"></a>
+      <a id="LazyParams[U,T&lt;:AnyRef{defvalue:U}]:LazyParams[U,T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LazyParams.html"><span class="name">LazyParams</span></a><span class="tparams">[<span name="U">U</span>, <span name="T">T &lt;: <span class="extype" name="scala.AnyRef">AnyRef</span> { def value: U }</span>]</span><span class="params">(<span name="entity">entity: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="views.html.htmlForm.bootstrap3.LazyParams.T">T</span></span>)</span><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.package@LazyParams[U,T&lt;:AnyRef{defvalue:U}]extendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">When present, signifies that a tab should be lazily loaded</p>
     </li><li name="views.html.htmlForm.bootstrap3.ModalDialogAjax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ModalDialogAjaxextendsProductwithSerializable"></a>
       <a id="ModalDialogAjax:ModalDialogAjax"></a>
@@ -117,6 +134,43 @@
       </a>
     </span>
       
+    </li><li name="views.html.htmlForm.bootstrap3.SmartTab" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SmartTab[U]extendsProductwithSerializable"></a>
+      <a id="SmartTab[U]:SmartTab[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SmartTab.html"><span class="name">SmartTab</span></a><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="href">href: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="label">label: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="helpText">helpText: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="isVisible">isVisible: <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">true</span></span>, <span name="isPrimary">isPrimary: <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="maybeLazyParams">maybeLazyParams: <span class="extype" name="scala.Option">Option</span>[<a href="LazyParams.html" class="extype" name="views.html.htmlForm.bootstrap3.LazyParams">LazyParams</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.SmartTab.U">U</span>, <span class="extype" name="scala.AnyRef">AnyRef</span> { def value: U }]] = <span class="symbol">None</span></span>, <span name="notReady">notReady: <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="noPadding">noPadding: <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="params">(<span name="content">content: ⇒ <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/twirl-api_2.11/1.1.1/twirl-api_2.11-1.1.1-javadoc.jar/!/index.html#play.twirl.api.Html" class="extype" target="_top">Html</a></span>)</span><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.package@SmartTab[U]extendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">href</dt><dd class="cmt"><p>link to content with leading #</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>must not contain a single quote character</p></dd><dt class="param">maybeLazyParams</dt><dd class="cmt"><p>if <code>nonEmpty</code>, creates tabs with an <code>href</code> that has <code>data-entity</code> and <code>data-id</code> attributes, like the following.
+{</p><ul><li><a href='#LectureAbout' data-toggle='tab' data-entity='lecture' data-id='62'>blah blah</a>
+   }
+  See <code>resoures/lazyload.js</code> for an example of how to lazily load the contents of a tab.</li></ul></dd></dl></div>
+    </li><li name="views.html.htmlForm.bootstrap3.SmartTabs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SmartTabs[U]extendsProductwithSerializable"></a>
+      <a id="SmartTabs[U]:SmartTabs[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SmartTabs.html"><span class="name">SmartTabs</span></a><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="maybeFragmentId">maybeFragmentId: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="tabs">tabs: <span class="extype" name="scala.List">List</span>[<a href="SmartTab.html" class="extype" name="views.html.htmlForm.bootstrap3.SmartTab">SmartTab</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.SmartTabs.U">U</span>]]</span>, <span name="tabContentId">tabContentId: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;TabContent&quot;</span></span>)</span><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.package@SmartTabs[U]extendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">See the unit tests for usage examples</p>
     </li><li name="views.html.htmlForm.bootstrap3.StringOrSeq" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="StringOrSeq[-T]extendsAnyRef"></a>
       <a id="StringOrSeq[-T]:StringOrSeq[T]"></a>
@@ -158,6 +212,40 @@
       </a>
     </span>
       <p class="shortcomment cmt">These methods generate HTML as a <code>String</code>.</p><div class="fullcomment"><div class="comment cmt"><p>These methods generate HTML as a <code>String</code>. The following CSS classes are used:</p><p><code>btn</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#buttons" target="_blank">http://getbootstrap.com/css/#buttons</a></p><p><code>checked</code>   - Applied to the enclosing &lt;div&gt; around a checkbox.</p><p><code>form-control</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#forms-example" target="_blank">http://getbootstrap.com/css/#forms-example</a></p><p><code>input-group</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#forms-example" target="_blank">http://getbootstrap.com/css/#forms-example</a></p><p><code>input-group-addon</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#forms-inline" target="_blank">http://getbootstrap.com/css/#forms-inline</a></p><p><code>input-group-addon-prefix</code> - Used by Twitter bootstrap; see <a href="http://codepen.io/swhdesigns/pen/bNwVgG" target="_blank">http://codepen.io/swhdesigns/pen/bNwVgG</a></p><p><code>bigCheckbox</code> - Applied to a multivalue checkbox (multiCheckbox)</p><p><code>mediumCheckbox</code> - Applied to a checkbox.</p><p><code>panel</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/components/#panels" target="_blank">http://getbootstrap.com/components/#panels</a></p><p><code>panel-default</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/components/#panels" target="_blank">http://getbootstrap.com/components/#panels</a></p><p><code>col-md-N</code> - Used by Twitter bootstrap; see <a href="http://getbootstrap.com/css/#grid" target="_blank">http://getbootstrap.com/css/#grid</a></p><p><code>preFlight</code> - Warns that an associated widget is in a non-ready state.</p></div></div>
+    </li><li name="views.html.htmlForm.bootstrap3.SmartTab" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SmartTab"></a>
+      <a id="SmartTab:SmartTab"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SmartTab$.html"><span class="name">SmartTab</span></a><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.package@SmartTab" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="views.html.htmlForm.bootstrap3.SmartTabs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SmartTabs"></a>
+      <a id="SmartTabs:SmartTabs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SmartTabs$.html"><span class="name">SmartTabs</span></a><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.package@SmartTabs" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="views.html.htmlForm.bootstrap3.StringOrSeq" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="StringOrSeq"></a>
       <a id="StringOrSeq:StringOrSeq"></a>
@@ -210,8 +298,8 @@ Example:</p><pre>@checkbox(field = myForm(<span class="lit">"done"</span>))</pre
       </a>
     </span>
       <p class="shortcomment cmt">Although the <code>datePicker</code> is not dependant on Twitter Bootstrap, this object wraps in Bootstrap-centric HTML and CSS.</p><div class="fullcomment"><div class="comment cmt"><p>Although the <code>datePicker</code> is not dependant on Twitter Bootstrap, this object wraps in Bootstrap-centric HTML and CSS.
-See <a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">https://github.com/eternicode/bootstrap-datepicker</a>
-See <a href="http://bootstrap-datepicker.readthedocs.io/en/latest/" target="_blank">http://bootstrap-datepicker.readthedocs.io/en/latest/</a></p></div></div>
+In the following usage example, <code>_form</code> is a <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.6/play_2.11-2.5.6-javadoc.jar/!/index.html#play.api.data.Form" class="extype" target="_top">play.api.data.Form</a> instance.</p><pre>datePicker(name=<span class="lit">"from"</span>, field=_form(<span class="lit">"from"</span>), label=<span class="lit">"Valid from"</span>)</pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">https://github.com/eternicode/bootstrap-datepicker</a>
+and <a href="http://bootstrap-datepicker.readthedocs.io/en/latest/" target="_blank">http://bootstrap-datepicker.readthedocs.io/en/latest/</a>.</p></span></dd></dl></div>
     </li><li name="views.html.htmlForm.bootstrap3.genericInput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="genericInput"></a>
       <a id="genericInput:genericInput"></a>
