@@ -11,14 +11,14 @@ class SmartTabsTest extends WordSpec with MustMatchers {
   def addressTab: SmartTab[Long] = SmartTab[Long](
     href = "#Address",
     label = "Address",
-    helpText = s"Customer address",
-    maybeLazyParams = Some(LazyParams("entity", Id[Long](0L)))
+    helpText = "Customer address",
+    maybeLazyParams = Some(LazyParams("entity", Id(0L)))
   ) { Html("<p>Blah blah</p>") }
 
-  def companyTab: SmartTab[Long] = SmartTab[Long](
+  def companyTab[T]: SmartTab[T] = SmartTab[T](
     href = "#Company",
     label = "Company",
-    helpText = s"Company details"
+    helpText = "Company details"
   ) { Html("<p>Blah blah</p>") }
 
   val smartTabs = new SmartTabs[Long](None, List(companyTab, addressTab))
