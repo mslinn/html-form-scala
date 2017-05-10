@@ -5,16 +5,10 @@ import play.api.mvc.{Headers, RequestHeader}
 case class ReallyFakeRequest(method: String, uri: String) extends RequestHeader {
   val url = new java.net.URL(uri)
 
-  val id: Long = 0L
-
-  val tags: Map[String, String] = Map.empty
-
   val path: String = url.getPath + {
     val ref = url.getRef
     if (ref.nonEmpty) s"#$ref" else ""
   }
-
-  val version: String = "1.0"
 
   val queryString: Map[String, Seq[String]] = {
     val x = for {
@@ -26,6 +20,12 @@ case class ReallyFakeRequest(method: String, uri: String) extends RequestHeader 
     }
     x.toMap
   }
+
+  val id: Long = 0L
+
+  val tags: Map[String, String] = Map.empty
+
+  val version: String = "1.0"
 
   val headers: Headers = Headers()
 
