@@ -5,20 +5,21 @@ import play.api.mvc.{Headers, RequestHeader}
 case class ReallyFakeRequest(method: String, uri: String) extends RequestHeader {
   val url = new java.net.URL(uri)
 
-  override def id: Long = 0L
+  val id: Long = 0L
 
-  override def tags: Map[String, String] = Map.empty
+  val tags: Map[String, String] = Map.empty
 
-  override def path: String = url.getPath + {
+  val path: String = url.getPath + {
     val ref = url.getRef
     if (ref.nonEmpty) s"#$ref" else ""
   }
 
-  override def version: String = ???
+  val version: String = "1.0"
 
-  override def queryString: Map[String, Seq[String]] = {
+  val queryString: Map[String, Seq[String]] = {
     val x = for {
-      nvPair <- url.getQuery.split("&").toSeq
+      query  <- Option(url.getQuery).toSeq
+      nvPair <- query.split("&").toSeq
     } yield {
       val Array(name, value) = nvPair.split("=")
       (name, Seq(value))
@@ -26,11 +27,11 @@ case class ReallyFakeRequest(method: String, uri: String) extends RequestHeader 
     x.toMap
   }
 
-  override def headers: Headers = ???
+  val headers: Headers = Headers()
 
-  override def remoteAddress: String = ???
+  val remoteAddress: String = "http://localhost"
 
-  override def secure: Boolean = ???
+  val secure: Boolean = false
 
-  override def clientCertificateChain: Option[Seq[X509Certificate]] = ???
+  val clientCertificateChain: Option[Seq[X509Certificate]] = None
 }
