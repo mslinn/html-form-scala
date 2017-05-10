@@ -55,15 +55,16 @@ val playVer = "2.5.6"
 libraryDependencies ++= Seq(
   "com.github.nscala-time"  %% "nscala-time"          % "2.14.0"  withSources(),
   "com.micronautics"        %% "currency"             % "1.2.10"  withSources(),
-  "com.micronautics"        %% "has-id"               % "1.0.1"   withSources(),
+  "com.micronautics"        %% "has-value"            % "1.0.1"   withSources(),
   "com.typesafe.play"       %% "play"                 % playVer   % Provided withSources(),
   "com.typesafe.play"       %% "filters-helpers"      % playVer   % Provided withSources(),
   //
   "com.typesafe.play"       %% "play"                 % playVer   % Docs,
   "com.typesafe.play"       %% "filters-helpers"      % playVer   % Docs,
   //
-  "org.scalatest"           %% "scalatest"            % "3.0.1"   % Test withSources(),
+  "com.micronautics"        %% "has-id"               % "1.0.1"   % Test withSources(),
   "junit"                   %  "junit"                % "4.12"    % Test,
+  "org.scalatest"           %% "scalatest"            % "3.0.1"   % Test withSources(),
   "org.webjars"             %  "bootstrap-datepicker" % "1.6.1"   % Test,
   "org.webjars"             %  "bootstrap"            % "3.3.7-1" % Test
 )

@@ -1,4 +1,4 @@
-import com.micronautics.Id
+import model.persistence.Id
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest._
