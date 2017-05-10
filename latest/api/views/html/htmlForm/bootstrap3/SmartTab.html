@@ -51,10 +51,11 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">href</dt><dd class="cmt"><p>link to content with leading #</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>must not contain a single quote character</p></dd><dt class="param">maybeLazyParams</dt><dd class="cmt"><p>if <code>nonEmpty</code>, creates tabs with an <code>href</code> that has <code>data-entity</code> and <code>data-id</code> attributes, like the following.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Once a <code>SmartTab</code> instance has been created, the tab and its contents are separately rendered by invoking
+<code>renderTab</code> and <code>renderContents</code>, respectively.</p></div><dl class="paramcmts block"><dt class="param">href</dt><dd class="cmt"><p>link to content with leading #.</p></dd><dt class="param">label</dt><dd class="cmt"><p>used as the value of a <code>title</code> attribute, which appears when the user hovers over the tab.</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>must not contain a single quote character</p></dd><dt class="param">isVisible</dt><dd class="cmt"><p>The tab will be visible if this parameter is <code>true</code>.</p></dd><dt class="param">isPrimary</dt><dd class="cmt"><p>The tab contents will initially be displayed if this parameter is <code>true</code>.</p></dd><dt class="param">maybeLazyParams</dt><dd class="cmt"><p>if <code>nonEmpty</code>, creates tabs with an <code>href</code> that has <code>data-entity</code> and <code>data-id</code> attributes, like the following.
 {</p><ul><li><a href='#LectureAbout' data-toggle='tab' data-entity='lecture' data-id='62'>blah blah</a>
    }
-  See <code>resoures/lazyload.js</code> for an example of how to lazily load the contents of a tab.</li></ul></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/{name.value}/tree/master/src/main/scala/views/html/htmlForm/bootstrap3/SmartTabs.scala" target="_blank">SmartTabs.scala</a></dd></dl><div class="toggleContainer block">
+  See <code>resoures/lazyload.js</code> for an example of how to lazily load the contents of a tab.</li></ul></dd><dt class="param">notReady</dt><dd class="cmt"><p>If true, the <code>glyphicon-ban-circle</code> icon will be displayed next to the tab text, and the <code>preFlight</code> class will be applied to the tab itself.</p></dd><dt class="param">noPadding</dt><dd class="cmt"><p>If true, the tab will be displayed as small as possible</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/{name.value}/tree/master/src/main/scala/views/html/htmlForm/bootstrap3/SmartTabs.scala" target="_blank">SmartTabs.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -109,10 +110,10 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">href</dt><dd class="cmt"><p>link to content with leading #</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>must not contain a single quote character</p></dd><dt class="param">maybeLazyParams</dt><dd class="cmt"><p>if <code>nonEmpty</code>, creates tabs with an <code>href</code> that has <code>data-entity</code> and <code>data-id</code> attributes, like the following.
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">href</dt><dd class="cmt"><p>link to content with leading #.</p></dd><dt class="param">label</dt><dd class="cmt"><p>used as the value of a <code>title</code> attribute, which appears when the user hovers over the tab.</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>must not contain a single quote character</p></dd><dt class="param">isVisible</dt><dd class="cmt"><p>The tab will be visible if this parameter is <code>true</code>.</p></dd><dt class="param">isPrimary</dt><dd class="cmt"><p>The tab contents will initially be displayed if this parameter is <code>true</code>.</p></dd><dt class="param">maybeLazyParams</dt><dd class="cmt"><p>if <code>nonEmpty</code>, creates tabs with an <code>href</code> that has <code>data-entity</code> and <code>data-id</code> attributes, like the following.
 {</p><ul><li><a href='#LectureAbout' data-toggle='tab' data-entity='lecture' data-id='62'>blah blah</a>
    }
-  See <code>resoures/lazyload.js</code> for an example of how to lazily load the contents of a tab.</li></ul></dd></dl></div>
+  See <code>resoures/lazyload.js</code> for an example of how to lazily load the contents of a tab.</li></ul></dd><dt class="param">notReady</dt><dd class="cmt"><p>If true, the <code>glyphicon-ban-circle</code> icon will be displayed next to the tab text, and the <code>preFlight</code> class will be applied to the tab itself.</p></dd><dt class="param">noPadding</dt><dd class="cmt"><p>If true, the tab will be displayed as small as possible</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -303,7 +304,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">link to content with leading #</p>
+      <p class="shortcomment cmt">link to content with leading #.</p>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -337,7 +338,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">The tab contents will initially be displayed if this parameter is <code>true</code>.</p>
     </li><li name="views.html.htmlForm.bootstrap3.SmartTab#isShown" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="isShown:Boolean"></a>
       <a id="isShown:Boolean"></a>
@@ -371,7 +372,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">The tab will be visible if this parameter is <code>true</code>.</p>
     </li><li name="views.html.htmlForm.bootstrap3.SmartTab#label" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="label:String"></a>
       <a id="label:String"></a>
@@ -388,7 +389,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">used as the value of a <code>title</code> attribute, which appears when the user hovers over the tab.</p>
     </li><li name="views.html.htmlForm.bootstrap3.SmartTab#maybeLazyParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="maybeLazyParams:Option[views.html.htmlForm.bootstrap3.LazyParams[U]]"></a>
       <a id="maybeLazyParams:Option[LazyParams[U]]"></a>
@@ -442,7 +443,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">If true, the tab will be displayed as small as possible</p>
     </li><li name="views.html.htmlForm.bootstrap3.SmartTab#notReady" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="notReady:Boolean"></a>
       <a id="notReady:Boolean"></a>
@@ -459,7 +460,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">If true, the <code>glyphicon-ban-circle</code> icon will be displayed next to the tab text, and the <code>preFlight</code> class will be applied to the tab itself.</p>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <a id="notify():Unit"></a>

@@ -100,7 +100,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
-    </li><li name="views.html.htmlForm.bootstrap3.LazyParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="views.html.htmlForm.bootstrap3.LazyParams" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="LazyParams[U]extendsProductwithSerializable"></a>
       <a id="LazyParams[U]:LazyParams[U]"></a>
       <h4 class="signature">
@@ -109,14 +109,15 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="LazyParams.html"><span class="name">LazyParams</span></a><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="entity">entity: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/micronautics/has-id_2.11/1.0.0/has-id_2.11-1.0.0-javadoc.jar/!/index.html#com.micronautics.HasValue" class="extype" target="_top">HasValue</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.LazyParams.U">U</span>]</span>)</span><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="LazyParams.html"><span class="name">LazyParams</span></a><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="entity">entity: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/micronautics/has-value_2.11/1.0.1/has-value_2.11-1.0.1-javadoc.jar/!/index.html#com.micronautics.HasValue" class="extype" target="_top">HasValue</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.LazyParams.U">U</span>]</span>)</span><span class="result"> extends <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#views.html.htmlForm.bootstrap3.package@LazyParams[U]extendsProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">When present, signifies that a tab should be lazily loaded</p>
+      <p class="shortcomment cmt">When present, signifies that a tab should be lazily loaded.</p><div class="fullcomment"><div class="comment cmt"><p>When present, signifies that a tab should be lazily loaded.
+JavaScript is responsible for figuring out how to load the required HTML, given <code>entity</code> and <code>id</code>.</p></div></div>
     </li><li name="views.html.htmlForm.bootstrap3.ModalDialogAjax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ModalDialogAjaxextendsProductwithSerializable"></a>
       <a id="ModalDialogAjax:ModalDialogAjax"></a>
@@ -150,10 +151,12 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">href</dt><dd class="cmt"><p>link to content with leading #</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>must not contain a single quote character</p></dd><dt class="param">maybeLazyParams</dt><dd class="cmt"><p>if <code>nonEmpty</code>, creates tabs with an <code>href</code> that has <code>data-entity</code> and <code>data-id</code> attributes, like the following.
+      <p class="shortcomment cmt">Once a <code>SmartTab</code> instance has been created, the tab and its contents are separately rendered by invoking
+<code>renderTab</code> and <code>renderContents</code>, respectively.</p><div class="fullcomment"><div class="comment cmt"><p>Once a <code>SmartTab</code> instance has been created, the tab and its contents are separately rendered by invoking
+<code>renderTab</code> and <code>renderContents</code>, respectively.</p></div><dl class="paramcmts block"><dt class="param">href</dt><dd class="cmt"><p>link to content with leading #.</p></dd><dt class="param">label</dt><dd class="cmt"><p>used as the value of a <code>title</code> attribute, which appears when the user hovers over the tab.</p></dd><dt class="param">helpText</dt><dd class="cmt"><p>must not contain a single quote character</p></dd><dt class="param">isVisible</dt><dd class="cmt"><p>The tab will be visible if this parameter is <code>true</code>.</p></dd><dt class="param">isPrimary</dt><dd class="cmt"><p>The tab contents will initially be displayed if this parameter is <code>true</code>.</p></dd><dt class="param">maybeLazyParams</dt><dd class="cmt"><p>if <code>nonEmpty</code>, creates tabs with an <code>href</code> that has <code>data-entity</code> and <code>data-id</code> attributes, like the following.
 {</p><ul><li><a href='#LectureAbout' data-toggle='tab' data-entity='lecture' data-id='62'>blah blah</a>
    }
-  See <code>resoures/lazyload.js</code> for an example of how to lazily load the contents of a tab.</li></ul></dd></dl></div>
+  See <code>resoures/lazyload.js</code> for an example of how to lazily load the contents of a tab.</li></ul></dd><dt class="param">notReady</dt><dd class="cmt"><p>If true, the <code>glyphicon-ban-circle</code> icon will be displayed next to the tab text, and the <code>preFlight</code> class will be applied to the tab itself.</p></dd><dt class="param">noPadding</dt><dd class="cmt"><p>If true, the tab will be displayed as small as possible</p></dd></dl></div>
     </li><li name="views.html.htmlForm.bootstrap3.SmartTabs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SmartTabs[U]extendsProductwithSerializable"></a>
       <a id="SmartTabs[U]:SmartTabs[U]"></a>
@@ -298,7 +301,7 @@ Example:</p><pre>@checkbox(field = myForm(<span class="lit">"done"</span>))</pre
       </a>
     </span>
       <p class="shortcomment cmt">Although the <code>datePicker</code> is not dependant on Twitter Bootstrap, this object wraps in Bootstrap-centric HTML and CSS.</p><div class="fullcomment"><div class="comment cmt"><p>Although the <code>datePicker</code> is not dependant on Twitter Bootstrap, this object wraps in Bootstrap-centric HTML and CSS.
-In the following usage example, <code>_form</code> is a <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.6/play_2.11-2.5.6-javadoc.jar/!/index.html#play.api.data.Form" class="extype" target="_top">play.api.data.Form</a> instance.</p><pre>datePicker(name=<span class="lit">"from"</span>, field=_form(<span class="lit">"from"</span>), label=<span class="lit">"Valid from"</span>)</pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">https://github.com/eternicode/bootstrap-datepicker</a>
+In the following usage example, <code>_form</code> is a <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Form" class="extype" target="_top">play.api.data.Form</a> instance.</p><pre>datePicker(name=<span class="lit">"from"</span>, field=_form(<span class="lit">"from"</span>), label=<span class="lit">"Valid from"</span>)</pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">https://github.com/eternicode/bootstrap-datepicker</a>
 and <a href="http://bootstrap-datepicker.readthedocs.io/en/latest/" target="_blank">http://bootstrap-datepicker.readthedocs.io/en/latest/</a>.</p></span></dd></dl></div>
     </li><li name="views.html.htmlForm.bootstrap3.genericInput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="genericInput"></a>
