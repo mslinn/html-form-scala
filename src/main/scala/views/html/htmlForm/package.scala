@@ -19,7 +19,10 @@ package views.html
   * Widgets related to Twitter Bootstrap 3.x are provided in the `views.html.htmlForm.bootstrap3` package.
   * Two flavors of modal dialog are provided, [[htmlForm.bootstrap3.SmartTabs]] and a [[htmlForm.bootstrap3.datePicker date picker]].
   * The [[htmlForm.bootstrap3.HtmlForm]] object contains `checkbox`es, `select`s, and various flavors of `input` for
-  * email, URLs, currency, passwords, percentages, range-limited numeric values and much more. */
+  * email, URLs, currency, passwords, percentages, range-limited numeric values and much more.
+  *
+  * Widgets return String, not Html, for efficiency when using Plain Old Scala views.
+  * The `bootstrap3` class enriches `String` by adding a `toHtml` method. */
 package object htmlForm {
   /** Generic low-level method */
   def tag(start: String, end: String, content: String*): String =
