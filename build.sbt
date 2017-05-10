@@ -11,7 +11,7 @@
 
 organization := "com.micronautics"
 name := "html-form-scala"
-version := "0.1.6"
+version := "0.1.7"
 licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
 scalaVersion := "2.11.11"
@@ -55,7 +55,7 @@ val playVer = "2.5.6"
 libraryDependencies ++= Seq(
   "com.github.nscala-time"  %% "nscala-time"          % "2.14.0"  withSources(),
   "com.micronautics"        %% "currency"             % "1.2.10"  withSources(),
-  "com.micronautics"        %% "has-id"               % "1.0.0"   withSources(),
+  "com.micronautics"        %% "has-id"               % "1.0.1"   withSources(),
   "com.typesafe.play"       %% "play"                 % playVer   % Provided withSources(),
   "com.typesafe.play"       %% "filters-helpers"      % playVer   % Provided withSources(),
   //
