@@ -4,7 +4,7 @@ import org.scalatest.Matchers._
 import org.scalatest._
 import org.scalatest.junit.JUnitRunner
 import play.twirl.api.Html
-import views.html.htmlForm.bootstrap3.{LazyParams, SmartTab, SmartTabs}
+import views.html.htmlForm.bootstrap3._
 
 @RunWith(classOf[JUnitRunner])
 class SmartTabsTest extends WordSpec with MustMatchers with EitherValues with OptionValues {
@@ -52,7 +52,7 @@ class SmartTabsTest extends WordSpec with MustMatchers with EitherValues with Op
 
   "SmartTabs with fragId" should {
     val request = ReallyFakeRequest("GET", "http://localhost/path#Company")
-    val fragId = SmartTabs.fragmentId(request)
+    val fragId: Option[String] = SmartTabs.fragmentId(request)
     val smartTabs = new SmartTabs[Long](fragId, List(companyTab, addressTab))
     val tabs: String = smartTabs.renderTabs.toString
     val contents: String = smartTabs.renderContents.toString
@@ -81,6 +81,12 @@ class SmartTabsTest extends WordSpec with MustMatchers with EitherValues with Op
                           |
                           |</div><!-- End #TabContent -->
                           |""".stripMargin
+    }
+  }
+
+  "toHtml" should {
+    "work" in {
+      "string".toHtml shouldBe Html("string")
     }
   }
 }
