@@ -32,4 +32,4 @@ Add this to your project's `build.sbt`:
     libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.6" withSources()
 
 ## Scaladoc
-[Here](http://mslinn.github.io/html-form-scala/latest/api/)
+[Here](http://mslinn.github.io/html-form-scala/latest/api/index.html)
