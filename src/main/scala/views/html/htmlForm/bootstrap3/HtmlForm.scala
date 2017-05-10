@@ -41,14 +41,14 @@ protected object StringOrSeq {
   *
   * `preFlight` - Warns that an associated widget is in a non-ready state. */
 object HtmlForm {
-  /** @return the value of [[Field]] */
+  /** @return the value of [[play.api.data.Field]] */
   def value(fieldName: String)(implicit form: Form[_]): String = form(fieldName).value.mkString(",")
 
   /** @return an HTML checkbox with CSS class `mediumCheckbox`,
-    *         enclosed within a &lt;div&gt; with id `${ fieldName }_container` and the CSS class `checked`.
-    *         If it is more convenient to pass the the [[Field]] instead of the name of the field, consider using the `checked` method.
+    *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
+    *         If it is more convenient to pass the the [[play.api.data.Field]] instead of the name of the field, consider using the `checked` method.
     *         If the `checked` status needs to be independently set, consider using the `checkedFromValue` method.
-    * @param fieldName if the [[Field]] with the name `fieldName` has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
+    * @param fieldName if the [[play.api.data.Field]] with the name `fieldName` has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
     * @param classes Add this value of this parameter to the enclosing div's CSS classes.
     * @param label if non-empty, the label follows the checkbox */
   def checkedFromName(fieldName: String, label: String="", classes: String="")
@@ -63,9 +63,9 @@ object HtmlForm {
   }
 
   /** @return an HTML checkbox with CSS class `mediumCheckbox`,
-    *         enclosed within a &lt;div&gt; with id `${ fieldName }_container` and the CSS class `checked`.
-    *         If the `checked` status needs to be set from the value of the [[Field]], consider using the `checkedFromName` method.
-    * @param fieldName if the [[Field]] with the name `fieldName` has the value `true` then set the checkbox's `checked` attribute.
+    *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
+    *         If the `checked` status needs to be set from the value of the [[play.api.data.Field]], consider using the `checkedFromName` method.
+    * @param fieldName if the [[play.api.data.Field]] with the name `fieldName` has the value `true` then set the checkbox's `checked` attribute.
     * @param classes Add this value of this parameter to the enclosing div's CSS classes.
     * @param label if non-empty, the label follows the checkbox */
   def checkedFromValue(fieldName: String, value: Boolean, label: String="", classes: String=""): String = {
@@ -78,13 +78,13 @@ object HtmlForm {
        |""".stripMargin
   }
 
-  /** In the follwing usage example `_form` is a [[Form]] instance.
+  /** In the follwing usage example `_form` is a [[play.api.data.Form]] instance.
     * {{{checked(_form("isComplete"), label="Disable")}}}
     * @return an HTML checkbox with CSS class `mediumCheckbox`,
-    *         enclosed within a &lt;div&gt; with id `${ fieldName }_container` and the CSS class `checked`.
-    *         If it is more convenient to pass the name of the field instead of the [[Field]] itself, consider using the `checkedFromName` method.
+    *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
+    *         If it is more convenient to pass the name of the field instead of the [[play.api.data.Field]] itself, consider using the `checkedFromName` method.
     *         If the `checked` status needs to be independently set, consider using the `checkedFromValue` method.
-    * @param field if the given [[Field]] has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
+    * @param field if the given [[play.api.data.Field]] has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
     * @param classes Add this value of this parameter to the enclosing div's CSS classes.
     * @param label if non-empty, the label follows the checkbox */
   def checked(field: Field, label: String="", classes: String="")
@@ -98,14 +98,14 @@ object HtmlForm {
   }
 
   /** Generates an &gt;input&lt; tag.
-    * The following usage examples assume `_form` is a [[Form]] instance:
+    * The following usage examples assume `_form` is a [[play.api.data.Form]] instance:
     * {{{ Seq(
     *   inputter(_form("userId"), label=s"User ID", asCode=true),
     *   inputter(_form("resellerCode"), label="Reseller code"),
     *   inputter(_form("id"), isHidden=true),
     *   inputter(_form("customerAddress.name"), label="Name", maybePlaceholder=Some("Name"))
     * ).mkString("\n") }}}
-    * @param field [[play.api.data.Form]] [[Field]] that supplies values for this widget instance, and is updated by submitting the HTML form containing this widget.
+    * @param field [[play.api.data.Form]] [[play.api.data.Field]] that supplies values for this widget instance, and is updated by submitting the HTML form containing this widget.
     * @param label Rendered within a &lt;label/&gt; tag associated with the generated &gt;input/&lt; tag.
     * @param asCode causes the displayed value to be rendered with a monospaced font.
     * @param containerClasses CSS classes applied to the containing &lt;div/&gt;.
@@ -299,7 +299,7 @@ object HtmlForm {
   /** Displays as a table with a heading; the height of the box depends on its contents.
     * See http://getbootstrap.com/components/#panels
     *
-    * In the following usage example, `_form` is a [[Form]] instance.
+    * In the following usage example, `_form` is a [[play.api.data.Form]] instance.
     * {{{panelTable("Financial Details", id="financialDetails") {
     *     Seq(
     *       tableRow("Currency", inputter(_form("paymentDetail.mcCurrency"), maybePlaceholder=Some("USD"))),
@@ -355,7 +355,7 @@ object HtmlForm {
          |""".stripMargin
   }
 
-  /** In the following usage example, RoleEnum is a Java enum, and `_form` is a [[Form]] instance.
+  /** In the following usage example, RoleEnum is a Java enum, and `_form` is a [[play.api.data.Form]] instance.
     * {{{selector(_form("roleEnum"),  label="Role type", options=RoleEnum.values.toSeq.map(v => (v.name, v.name)))}}} */
   def selector(field: Field, options: Seq[(String, String)], label: String=""): String = {
     val maybeValue: Option[String] = field.value

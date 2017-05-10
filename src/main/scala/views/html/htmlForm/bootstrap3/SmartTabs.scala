@@ -1,7 +1,7 @@
 package views.html.htmlForm.bootstrap3
 
+import com.micronautics.HasValue
 import play.twirl.api.{Html, HtmlFormat}
-import scala.language.reflectiveCalls
 
 object SmartTabs {
   def apply[U](maybeFragmentId: Option[String], tabs: SmartTab[U]*): SmartTabs[U] =
@@ -24,7 +24,7 @@ case class SmartTabs[U](maybeFragmentId: Option[String], tabs: List[SmartTab[U]]
 }
 
 /** When present, signifies that a tab should be lazily loaded */
-case class LazyParams[U, T<:{ def value: U }](entity: String, id: T)
+case class LazyParams[U](entity: String, id: HasValue[U])
 
 /** @param maybeLazyParams if `nonEmpty`, creates tabs with an `href` that has `data-entity` and `data-id` attributes, like the following.
   * { <ul class="nav nav-tabs">
@@ -39,7 +39,7 @@ case class SmartTab[U](
   helpText: String = "",
   isVisible: Boolean = true,
   isPrimary: Boolean = false,
-  maybeLazyParams: Option[LazyParams[U, { def value: U }]] = None,
+  maybeLazyParams: Option[LazyParams[U]] = None,
   notReady: Boolean = false,
   noPadding: Boolean = false
 )(content: => Html) {
