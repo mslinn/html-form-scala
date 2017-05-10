@@ -1,11 +1,21 @@
 package views.html.htmlForm.bootstrap3
 
 import com.micronautics.HasValue
+import play.api.mvc.RequestHeader
 import play.twirl.api.{Html, HtmlFormat}
 
 object SmartTabs {
+  /** Factory for a set of tabs.
+    * @param maybeFragmentId  */
   def apply[U](maybeFragmentId: Option[String], tabs: SmartTab[U]*): SmartTabs[U] =
     new SmartTabs[U](maybeFragmentId, tabs.toList)
+
+  /** @return Some(fragment-id) extracted from path (text following #, including the #), or None if not present */
+  @inline def fragmentId(implicit request: RequestHeader): Option[String] = {
+    val path = request.path
+    val i = path.lastIndexOf("#")
+    if (i >= 0) Some(path.substring(i)) else None
+  }
 }
 
 /** See the unit tests for usage examples */
@@ -26,13 +36,18 @@ case class SmartTabs[U](maybeFragmentId: Option[String], tabs: List[SmartTab[U]]
 /** When present, signifies that a tab should be lazily loaded */
 case class LazyParams[U](entity: String, id: HasValue[U])
 
-/** @param maybeLazyParams if `nonEmpty`, creates tabs with an `href` that has `data-entity` and `data-id` attributes, like the following.
+/** @param href link to content with leading #.
+  * @param label used as the value of a `title` attribute, which appears when the user hovers over the tab.
+  * @param helpText must not contain a single quote character
+  * @param isVisible The tab will be visible if this parameter is `true`.
+  * @param isPrimary The tab contents will initially be displayed if this parameter is `true`.
+  * @param maybeLazyParams if `nonEmpty`, creates tabs with an `href` that has `data-entity` and `data-id` attributes, like the following.
   * { <ul class="nav nav-tabs">
   *     <li data-toggle="tooltip" title="blah blah"><a href='#LectureAbout' data-toggle='tab' data-entity='lecture' data-id='62'>blah blah</a></li>
   *   </ul> }
   *   See `resoures/lazyload.js` for an example of how to lazily load the contents of a tab.
-  * @param href link to content with leading #
-  * @param helpText must not contain a single quote character */
+  * @param notReady If true, the `glyphicon-ban-circle` icon will be displayed next to the tab text, and the `preFlight` class will be applied to the tab itself.
+  * @param noPadding If true, the tab will be displayed as small as possible */
 case class SmartTab[U](
   href: String,
   label: String,
@@ -68,12 +83,13 @@ case class SmartTab[U](
     val lazyContent: String   = if (maybeLazyParams.isDefined) "" else content.toString().trim
     val style: String         = if (noPadding) " style='padding: 0'" else ""
     Html(s"""<div class='tab-pane fade$active'$style id='$linkId'$lazyAttribute>
-            |  $lazyContent
+            |$lazyContent
             |</div><!-- End content tab #$linkId -->
             |""".stripMargin)
   } else HtmlFormat.empty
 }
 
 object SmartTab {
+  /** Factory for an invisible tab with no label and no contents */
   def empty[T]: SmartTab[T] = SmartTab[T](href="", label="", isVisible=false) { HtmlFormat.empty }
 }

@@ -33,3 +33,9 @@ Add this to your project's `build.sbt`:
 
 ## Scaladoc
 [Here](http://mslinn.github.io/html-form-scala/latest/api/index.html)
+
+## Working with html-form-scala
+This project requires an implementation of `model.persistence.Id`, defined in 
+[has-id](https://github.com/mslinn/has-id) for testing purposes.
+Other projects that incorporate this project as a dependency must define their own implementation
+of `model.persistence.Id` (for persistence, for example).
