@@ -6,7 +6,7 @@ import play.twirl.api.{Html, HtmlFormat}
 
 object SmartTabs {
   /** Factory for a set of tabs.
-    * @param maybeFragmentId  */
+    * @param maybeFragmentId is used to identify the active tab, based on the URL. */
   def apply[U](maybeFragmentId: Option[String], tabs: SmartTab[U]*): SmartTabs[U] =
     new SmartTabs[U](maybeFragmentId, tabs.toList)
 
@@ -33,10 +33,13 @@ case class SmartTabs[U](maybeFragmentId: Option[String], tabs: List[SmartTab[U]]
             |""".stripMargin)
 }
 
-/** When present, signifies that a tab should be lazily loaded */
+/** When present, signifies that a tab should be lazily loaded.
+  * JavaScript is responsible for figuring out how to load the required HTML, given `entity` and `id`. */
 case class LazyParams[U](entity: String, id: HasValue[U])
 
-/** @param href link to content with leading #.
+/** Once a `SmartTab` instance has been created, the tab and its contents are separately rendered by invoking
+  * `renderTab` and `renderContents`, respectively.
+  * @param href link to content with leading #.
   * @param label used as the value of a `title` attribute, which appears when the user hovers over the tab.
   * @param helpText must not contain a single quote character
   * @param isVisible The tab will be visible if this parameter is `true`.
