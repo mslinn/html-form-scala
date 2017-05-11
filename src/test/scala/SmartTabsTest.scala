@@ -83,10 +83,4 @@ class SmartTabsTest extends WordSpec with MustMatchers with EitherValues with Op
                           |""".stripMargin
     }
   }
-
-  "toHtml" should {
-    "work" in {
-      "string".toHtml shouldBe Html("string")
-    }
-  }
 }

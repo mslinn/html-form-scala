@@ -152,7 +152,8 @@ object HtmlForm {
     selectedValues: Seq[String] = Nil,
     isRequired: Boolean = false,
     style: String = "",
-    suffixValue: String = ""
+    suffixValue: String = "",
+    data: List[(String, String)] = Nil
   ): String = {
     val testReady = maybeReady.exists(_._2)
 
@@ -207,8 +208,10 @@ object HtmlForm {
 
     val styleTag = if (isHidden || style.trim.isEmpty) "" else s"style='$style'"
 
+    val dataAttrs = data.map { case (n, v) => s"data-$n='$v'" }.mkString(" ", " ", " ")
+
     val element: String = if (optionValues.isEmpty) {
-      s"<input $typeStr id='$id' name='$name' $value $min $styleTag $inputClasses $describedBy $help$requiredStr$placeholder>"
+      s"<input $typeStr id='$id' name='$name' $value $min $styleTag $inputClasses $describedBy $help$requiredStr$placeholder$dataAttrs>"
     } else {
       val options: Seq[String] = optionValues.map { case (n, v) =>
         s"  <option value='$v'${ if (selectedValues.contains(v)) " selected" else "" }>$n</option>"
