@@ -78,7 +78,7 @@ object HtmlForm {
     * @param fieldOrName can be of type String or [[play.api.data.Field]]; these values are used to derive the values for the checkbox's `id` and `name` attributes.
     * @param classes Add this value of this parameter to the enclosing div's CSS classes.
     * @param label if non-empty, the label follows the checkbox
-    * @param maybeValue can be of type Option[[[play.api.data.Form]]], Option[[[play.api.data.Field]]], `Option[String]` or `Option[Boolean]`.
+    * @param maybeValue can be of type `Option[Form]`, `Option[Field]`, `Option[String]` or `Option[Boolean]`.
     *              If a [[play.api.data.Form]] is provided, the value of `fieldOrName` is used to determine the [[play.api.data.Field]] value to obtain from the `Form`, and if set the checkbox will receive a `checked` attribute.
     *              If a [[play.api.data.Field]] is provided, and has the value "true", "on" or "enabled" then set the checkbox's `checked` attribute.
     *              If a `String` is provided, it is compared to "true", "on" or "enabled", and the result of the comparison is used to set the checkbox's `checked` attribute.
