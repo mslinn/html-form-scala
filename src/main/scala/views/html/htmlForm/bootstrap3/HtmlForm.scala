@@ -70,7 +70,7 @@ object HtmlForm {
     * }}}
     * Sorry, I'll try to figure out a better implementation. You could also write:
     * {{{
-    * checked[Field, Nada](form("refunded"), label="Refunded", maybeValue=form("refunded").value)
+    * checked(form("refunded"), label="Refunded", maybeValue=form("refunded").value)
     * }}}
     * @return an HTML checkbox with CSS class `mediumCheckbox`,
     *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
