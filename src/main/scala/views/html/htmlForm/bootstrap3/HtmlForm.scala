@@ -15,6 +15,24 @@ protected object StringOrSeq {
   implicit object StringWitness extends StringOrSeq[String]
 }
 
+protected sealed trait ValueUnion[-T]
+class Nada
+
+protected object ValueUnion {
+  implicit object FieldWitness   extends ValueUnion[Field]
+  implicit object FormWitness    extends ValueUnion[Form[_]]
+  implicit object StringWitness  extends ValueUnion[String]
+  implicit object BooleanWitness extends ValueUnion[Boolean]
+  implicit object NadaWitness    extends ValueUnion[Nada]
+}
+
+protected sealed trait FieldOrName[-T]
+
+protected object FieldOrName {
+  implicit object FieldWitness extends FieldOrName[Field]
+  implicit object StringWitness extends FieldOrName[String]
+}
+
 /** These methods generate HTML as a `String`. The following CSS classes are used:
   *
   * `btn` - Used by Twitter bootstrap; see [[http://getbootstrap.com/css/#buttons]]
@@ -41,57 +59,52 @@ protected object StringOrSeq {
   *
   * `preFlight` - Warns that an associated widget is in a non-ready state. */
 object HtmlForm {
-  /** @return the value of [[play.api.data.Field]] */
-  def value(fieldName: String)(implicit form: Form[_]): String = form(fieldName).value.mkString(",")
-
-  /** @return an HTML checkbox with CSS class `mediumCheckbox`,
-    *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
-    *         If it is more convenient to pass the the [[play.api.data.Field]] instead of the name of the field, consider using the `checked` method.
-    *         If the `checked` status needs to be independently set, consider using the `checkedFromValue` method.
-    * @param fieldName if the [[play.api.data.Field]] with the name `fieldName` has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
-    * @param classes Add this value of this parameter to the enclosing div's CSS classes.
-    * @param label if non-empty, the label follows the checkbox */
-  def checkedFromName(fieldName: String, label: String="", classes: String="")
-                     (implicit form: Form[_]): String = {
-    val ckd = if (List("true", "on", "enabled").contains(value(fieldName))) "checked='checked'" else ""
-    val fieldId = fieldName.replace('.', '_').replace('[', '_').replace("]", "")
-    s"""<div class="checked $classes" id="${ fieldId }_container">
-       |  <input type="checkbox" name="$fieldName" id="$fieldId" value="true" $ckd class="mediumCheckbox">
-       |  ${ if (label.trim.isEmpty) "" else s"$label" }
-       |</div>
-       |""".stripMargin
-  }
-
-  /** @return an HTML checkbox with CSS class `mediumCheckbox`,
-    *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
-    *         If the `checked` status needs to be set from the value of the [[play.api.data.Field]], consider using the `checkedFromName` method.
-    * @param fieldName if the [[play.api.data.Field]] with the name `fieldName` has the value `true` then set the checkbox's `checked` attribute.
-    * @param classes Add this value of this parameter to the enclosing div's CSS classes.
-    * @param label if non-empty, the label follows the checkbox */
-  def checkedFromValue(fieldName: String, value: Boolean, label: String="", classes: String=""): String = {
-    val ckd = if (value) "checked='checked'" else ""
-    val fieldId = fieldName.replace('.', '_').replace('[', '_').replace("]", "")
-    s"""<div class="checked $classes" id="${ fieldId }_container">
-       |  <input type="checkbox" name="$fieldName" id="$fieldId" value="true" $ckd class="mediumCheckbox">
-       |  ${ if (label.trim.isEmpty) "" else s"$label" }
-       |</div>
-       |""".stripMargin
-  }
-
-  /** In the follwing usage example `_form` is a [[play.api.data.Form]] instance.
-    * {{{checked(_form("isComplete"), label="Disable")}}}
+  /** This method uses ad-hoc polymorphism for the `fieldOrName` and `value` parameters.
+    * In English this means that those parameters accept more than one type.
+    * If no value is explicitly provided (by passing Some value to `maybeValue`), this clunky implementation requires
+    * that the `Nada` parametric type is specified when a `Field` is passed as the value of `fieldOrName` and the value
+    * of the `Field` should be used to set the `checked` attribute.
+    * Because there are two parametric types, and if any are specified, they all must be specified, your code looks like this:
+    * {{{
+    * checked[Field, Nada](form("refunded"), label="Refunded")
+    * }}}
+    * Sorry, I'll try to figure out a better implementation. You could also write:
+    * {{{
+    * checked[Field, Nada](form("refunded"), label="Refunded", maybeValue=form("refunded").value)
+    * }}}
     * @return an HTML checkbox with CSS class `mediumCheckbox`,
     *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
-    *         If it is more convenient to pass the name of the field instead of the [[play.api.data.Field]] itself, consider using the `checkedFromName` method.
-    *         If the `checked` status needs to be independently set, consider using the `checkedFromValue` method.
-    * @param field if the given [[play.api.data.Field]] has the value `true`, `on` or `enabled`, then set the checkbox's `checked` attribute.
+    *         If the `checked` status needs to be set from the value of the [[play.api.data.Field]], consider using the `checkedFromName` method.
+    * @param fieldOrName can be of type String or [[play.api.data.Field]]; these values are used to derive the values for the checkbox's `id` and `name` attributes.
     * @param classes Add this value of this parameter to the enclosing div's CSS classes.
-    * @param label if non-empty, the label follows the checkbox */
-  def checked(field: Field, label: String="", classes: String="")
-             (implicit form: Form[_]): String = {
-    val ckd = if (List("true", "on", "enabled").contains(value(field.name))) "checked='checked'" else ""
-    s"""<div class="checked $classes" id="${ field.id }_container">
-       |  <input type="checkbox" name="${ field.name }" id="${ field.id }" value="true" $ckd class="mediumCheckbox">
+    * @param label if non-empty, the label follows the checkbox
+    * @param maybeValue can be of type Option[[[play.api.data.Form]]], Option[[[play.api.data.Field]]], `Option[String]` or `Option[Boolean]`.
+    *              If a [[play.api.data.Form]] is provided, the value of `fieldOrName` is used to determine the [[play.api.data.Field]] value to obtain from the `Form`, and if set the checkbox will receive a `checked` attribute.
+    *              If a [[play.api.data.Field]] is provided, and has the value "true", "on" or "enabled" then set the checkbox's `checked` attribute.
+    *              If a `String` is provided, it is compared to "true", "on" or "enabled", and the result of the comparison is used to set the checkbox's `checked` attribute.
+    *              If a `Boolean` is provided, its value is used to set the checkbox's `checked` attribute. */
+  def checked[F: FieldOrName, V: ValueUnion](fieldOrName: F, maybeValue: Option[V]=None, label: String="", classes: String=""): String = {
+    def kindaTrue(value: String): Boolean = List("true", "on", "enabled").contains(value)
+
+    val fieldName = fieldOrName match {
+      case field: Field => field.name
+      case name: String => name
+    }
+
+    val isTrue: Boolean = maybeValue.map {
+      case form: Form[_]    => form(fieldName).value.exists(kindaTrue)
+      case field: Field     => field.value.exists(kindaTrue)
+      case string: String   => kindaTrue(string)
+      case boolean: Boolean => boolean
+    }.getOrElse(fieldOrName match {
+      case field: Field => field.value.exists(kindaTrue)
+      case name: String => throw new Exception(s"No value supplied to checkedFrom for field $name")
+    })
+    val ckd = if (isTrue) "checked='checked'" else ""
+
+    val fieldId = fieldName.replace('.', '_').replace('[', '_').replace("]", "")
+    s"""<div class="checked $classes" id="${ fieldId }_container">
+       |  <input type="checkbox" name="$fieldName" id="$fieldId" value="true" $ckd class="mediumCheckbox">
        |  ${ if (label.trim.isEmpty) "" else s"$label" }
        |</div>
        |""".stripMargin
@@ -390,4 +403,6 @@ object HtmlForm {
     (if (!preFlight) "" else "<div class='trueFalseGlyphContainer preFlight'>") +
     s"<span class='giLower glyphicon glyphicon-${ if (value) "ok" else "remove" }'></span>" +
     (if (!preFlight) "" else "</div>")
+
+  def value(fieldName: String)(implicit form: Form[_]): String = form(fieldName).value.mkString(",")
 }
