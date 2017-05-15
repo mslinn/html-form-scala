@@ -58,7 +58,8 @@ Widgets in the <code>views.html.htmlForm</code> package are HTML5 compatible,
 and include a <a href="CSRFHelper.html" class="extype" name="views.html.htmlForm.CSRFHelper">CSRF form helper</a>.</p><p>Widgets related to Twitter Bootstrap 3.x are provided in the <code>views.html.htmlForm.bootstrap3</code> package.
 Two flavors of modal dialog are provided, <a href="bootstrap3/SmartTabs.html" class="extype" name="views.html.htmlForm.bootstrap3.SmartTabs">htmlForm.bootstrap3.SmartTabs</a> and a <a href="bootstrap3/datePicker$.html" class="extype" name="views.html.htmlForm.bootstrap3.datePicker">date picker</a>.
 The <a href="bootstrap3/HtmlForm$.html" class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm">htmlForm.bootstrap3.HtmlForm</a> object contains <code>checkbox</code>es, <code>select</code>s, and various flavors of <code>input</code> for
-email, URLs, currency, passwords, percentages, range-limited numeric values and much more.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/{name.value}/tree/master/src/main/scala/views/html/htmlForm/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+email, URLs, currency, passwords, percentages, range-limited numeric values and much more.</p><p>Widgets return String, not Html, for efficiency when using Plain Old Scala views.
+The <code>bootstrap3</code> class enriches <code>String</code> by adding a <code>toHtml</code> method.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/{name.value}/tree/master/src/main/scala/views/html/htmlForm/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
