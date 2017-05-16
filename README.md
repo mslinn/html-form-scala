@@ -32,7 +32,7 @@ Add this to your project's `build.sbt`:
     libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.9" withSources()
 
 ## Scaladoc
-[Here](http://mslinn.github.io/html-form-scala/latest/api/index.html)
+[Here](http://blog.mslinn.com/html-form-scala/latest/api/index.html#views.html.htmlForm.package)
 
 ## Working with html-form-scala
 This project requires an implementation of `model.persistence.Id`, defined in 
