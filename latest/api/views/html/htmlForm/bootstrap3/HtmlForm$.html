@@ -88,7 +88,27 @@
         <div id="allMembers">
         
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="views.html.htmlForm.bootstrap3.HtmlForm.Checked" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Checked[F]extendsAnyRef"></a>
+      <a id="Checked[F]:Checked[F]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="HtmlForm$$Checked.html"><span class="name">Checked</span></a><span class="tparams">[<span name="F">F</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@Checked[F]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -163,33 +183,35 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="views.html.htmlForm.bootstrap3.HtmlForm#checked" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="checked[F,V](fieldOrName:F,maybeValue:Option[V],label:String,classes:String)(implicitevidence$1:views.html.htmlForm.bootstrap3.FieldOrName[F],implicitevidence$2:views.html.htmlForm.bootstrap3.ValueUnion[V]):String"></a>
-      <a id="checked[F,V](F,Option[V],String,String)(FieldOrName[F],ValueUnion[V]):String"></a>
+      <a id="checked[F](fieldOrName:F,label:String,classes:String)(implicitevidence$1:views.html.htmlForm.bootstrap3.FieldOrName[F]):views.html.htmlForm.bootstrap3.HtmlForm.Checked[F]"></a>
+      <a id="checked[F](F,String,String)(FieldOrName[F]):Checked[F]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">checked</span><span class="tparams">[<span name="F">F</span>, <span name="V">V</span>]</span><span class="params">(<span name="fieldOrName">fieldOrName: <span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.checked.F">F</span></span>, <span name="maybeValue">maybeValue: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.checked.V">V</span>] = <span class="symbol">None</span></span>, <span name="label">label: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="classes">classes: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="FieldOrName.html" class="extype" name="views.html.htmlForm.bootstrap3.FieldOrName">FieldOrName</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.checked.F">F</span>]</span>, <span name="arg1">arg1: <a href="ValueUnion.html" class="extype" name="views.html.htmlForm.bootstrap3.ValueUnion">ValueUnion</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.checked.V">V</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">checked</span><span class="tparams">[<span name="F">F</span>]</span><span class="params">(<span name="fieldOrName">fieldOrName: <span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.checked.F">F</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="label">label: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="classes">classes: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="FieldOrName.html" class="extype" name="views.html.htmlForm.bootstrap3.FieldOrName">FieldOrName</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.checked.F">F</span>]</span>)</span><span class="result">: <a href="HtmlForm$$Checked.html" class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.Checked">Checked</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.checked.F">F</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@checked[F,V](fieldOrName:F,maybeValue:Option[V],label:String,classes:String)(implicitevidence$1:views.html.htmlForm.bootstrap3.FieldOrName[F],implicitevidence$2:views.html.htmlForm.bootstrap3.ValueUnion[V]):String" title="Permalink" target="_top">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@checked[F](fieldOrName:F,label:String,classes:String)(implicitevidence$1:views.html.htmlForm.bootstrap3.FieldOrName[F]):views.html.htmlForm.bootstrap3.HtmlForm.Checked[F]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">This method uses ad-hoc polymorphism for the <code>fieldOrName</code> and <code>value</code> parameters.</p><div class="fullcomment"><div class="comment cmt"><p>This method uses ad-hoc polymorphism for the <code>fieldOrName</code> and <code>value</code> parameters.
-In English this means that those parameters accept more than one type.
-If no value is explicitly provided (by passing Some value to <code>maybeValue</code>), this clunky implementation requires
-that the <code>Nada</code> parametric type is specified when a <code>Field</code> is passed as the value of <code>fieldOrName</code> and the value
-of the <code>Field</code> should be used to set the <code>checked</code> attribute.
-Because there are two parametric types, and if any are specified, they all must be specified, your code looks like this:</p><pre>checked[Field, Nada](form(<span class="lit">"refunded"</span>), label=<span class="lit">"Refunded"</span>)</pre><p>Sorry, I'll try to figure out a better implementation. You could also write:</p><pre>checked(form(<span class="lit">"refunded"</span>), label=<span class="lit">"Refunded"</span>, maybeValue=form(<span class="lit">"refunded"</span>).value)</pre></div><dl class="paramcmts block"><dt class="param">fieldOrName</dt><dd class="cmt"><p>can be of type String or <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Field" class="extype" target="_top">play.api.data.Field</a>; these values are used to derive the values for the checkbox's <code>id</code> and <code>name</code> attributes.</p></dd><dt class="param">maybeValue</dt><dd class="cmt"><p>can be of type <code>Option[Form]</code>, <code>Option[Field]</code>, <code>Option[String]</code> or <code>Option[Boolean]</code>.
-             If a <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Form" class="extype" target="_top">play.api.data.Form</a> is provided, the value of <code>fieldOrName</code> is used to determine the <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Field" class="extype" target="_top">play.api.data.Field</a> value to obtain from the <code>Form</code>, and if set the checkbox will receive a <code>checked</code> attribute.
-             If a <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Field" class="extype" target="_top">play.api.data.Field</a> is provided, and has the value &quot;true&quot;, &quot;on&quot; or &quot;enabled&quot; then set the checkbox's <code>checked</code> attribute.
-             If a <code>String</code> is provided, it is compared to &quot;true&quot;, &quot;on&quot; or &quot;enabled&quot;, and the result of the comparison is used to set the checkbox's <code>checked</code> attribute.
-             If a <code>Boolean</code> is provided, its value is used to set the checkbox's <code>checked</code> attribute.</p></dd><dt class="param">label</dt><dd class="cmt"><p>if non-empty, the label follows the checkbox</p></dd><dt class="param">classes</dt><dd class="cmt"><p>Add this value of this parameter to the enclosing div's CSS classes.</p></dd><dt>returns</dt><dd class="cmt"><p>an HTML checkbox with CSS class <code>mediumCheckbox</code>,
+In English this means that those parameters accept more than one type.</p><pre><span class="kw">val</span> refundedField = form(<span class="lit">"refunded"</span>)
+checked(refundedField, label=<span class="lit">"Refunded"</span>).value(<span class="kw">false</span>)
+checked(refundedField, label=<span class="lit">"Refunded"</span>).useFieldValue
+checked(refundedField, label=<span class="lit">"Refunded"</span>).toString
+checked(refundedField, label=<span class="lit">"Refunded"</span>).value(<span class="kw">true</span>)
+checked(refundedField, label=<span class="lit">"Refunded"</span>).value(<span class="lit">"true"</span>)
+checked(<span class="lit">"refunded"</span>, label=<span class="lit">"Refunded"</span>).value(form)
+checked(<span class="lit">"refunded"</span>, label=<span class="lit">"Refunded"</span>).value(<span class="kw">true</span>)
+checked(<span class="lit">"refunded"</span>, label=<span class="lit">"Refunded"</span>).value(<span class="lit">"true"</span>)</pre></div><dl class="paramcmts block"><dt class="param">fieldOrName</dt><dd class="cmt"><p>can be of type String or <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Field" class="extype" target="_top">play.api.data.Field</a>; these values are used to derive the values
+                   for the checkbox's <code>id</code> and <code>name</code> attributes.</p></dd><dt class="param">label</dt><dd class="cmt"><p>if non-empty, the label follows the checkbox</p></dd><dt class="param">classes</dt><dd class="cmt"><p>Add this value of this parameter to the enclosing div's CSS classes.</p></dd><dt>returns</dt><dd class="cmt"><p>an HTML checkbox with CSS class <code>mediumCheckbox</code>,
         enclosed within a &lt;div&gt; with id <code>${ fieldName }_container</code> and the CSS class <code>checked</code>.
-        If the <code>checked</code> status needs to be set from the value of the <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Field" class="extype" target="_top">play.api.data.Field</a>, consider using the <code>checkedFromName</code> method.</p></dd></dl></div>
+        If the <code>checked</code> status needs to be set from the value of the <a href="https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play_2.11/2.5.12/play_2.11-2.5.12-javadoc.jar/!/index.html#play.api.data.Field" class="extype" target="_top">play.api.data.Field</a>, consider using the
+        <code>checkedFromName</code> method.</p></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -248,7 +270,7 @@ Because there are two parametric types, and if any are specified, they all must 
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="views.html.htmlForm.bootstrap3.HtmlForm#expandedContent" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="expandedContent[T](content:T)(implicitevidence$3:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String"></a>
+      <a id="expandedContent[T](content:T)(implicitevidence$4:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String"></a>
       <a id="expandedContent[T](T)(StringOrSeq[T]):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -259,7 +281,7 @@ Because there are two parametric types, and if any are specified, they all must 
         <span class="name">expandedContent</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="content">content: <span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.expandedContent.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="StringOrSeq.html" class="extype" name="views.html.htmlForm.bootstrap3.StringOrSeq">StringOrSeq</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.expandedContent.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@expandedContent[T](content:T)(implicitevidence$3:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String" title="Permalink" target="_top">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@expandedContent[T](content:T)(implicitevidence$4:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -448,7 +470,7 @@ The following usage examples assume <code>_form</code> is a <a href="https://oss
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="views.html.htmlForm.bootstrap3.HtmlForm#panel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="panel[T](title:String,id:String,enabled:Boolean,showHeading:Boolean)(content:views.html.htmlForm.bootstrap3.FadeValue=&gt;T)(implicitevidence$5:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String"></a>
+      <a id="panel[T](title:String,id:String,enabled:Boolean,showHeading:Boolean)(content:views.html.htmlForm.bootstrap3.FadeValue=&gt;T)(implicitevidence$6:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String"></a>
       <a id="panel[T](String,String,Boolean,Boolean)((FadeValue)⇒T)(StringOrSeq[T]):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -459,7 +481,7 @@ The following usage examples assume <code>_form</code> is a <a href="https://oss
         <span class="name">panel</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="title">title: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="id">id: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="enabled">enabled: <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">true</span></span>, <span name="showHeading">showHeading: <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">true</span></span>)</span><span class="params">(<span name="content">content: (<a href="FadeValue.html" class="extype" name="views.html.htmlForm.bootstrap3.FadeValue">FadeValue</a>) ⇒ <span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.panel.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="StringOrSeq.html" class="extype" name="views.html.htmlForm.bootstrap3.StringOrSeq">StringOrSeq</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.panel.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@panel[T](title:String,id:String,enabled:Boolean,showHeading:Boolean)(content:views.html.htmlForm.bootstrap3.FadeValue=&gt;T)(implicitevidence$5:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String" title="Permalink" target="_top">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@panel[T](title:String,id:String,enabled:Boolean,showHeading:Boolean)(content:views.html.htmlForm.bootstrap3.FadeValue=&gt;T)(implicitevidence$6:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -482,7 +504,7 @@ The following usage examples assume <code>_form</code> is a <a href="https://oss
     </span>
       
     </li><li name="views.html.htmlForm.bootstrap3.HtmlForm#panelTable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="panelTable[T](title:String,id:String,columns:Int)(content:=&gt;T)(implicitevidence$4:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String"></a>
+      <a id="panelTable[T](title:String,id:String,columns:Int)(content:=&gt;T)(implicitevidence$5:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String"></a>
       <a id="panelTable[T](String,String,Int)(⇒T)(StringOrSeq[T]):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -493,7 +515,7 @@ The following usage examples assume <code>_form</code> is a <a href="https://oss
         <span class="name">panelTable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="title">title: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="id">id: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="columns">columns: <a href="http://scala-lang.org/files/archive/api/2.11.11/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">6</span></span>)</span><span class="params">(<span name="content">content: ⇒ <span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.panelTable.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="StringOrSeq.html" class="extype" name="views.html.htmlForm.bootstrap3.StringOrSeq">StringOrSeq</a>[<span class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm.panelTable.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@panelTable[T](title:String,id:String,columns:Int)(content:=&gt;T)(implicitevidence$4:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String" title="Permalink" target="_top">
+      <a href="../../../../index.html#views.html.htmlForm.bootstrap3.HtmlForm$@panelTable[T](title:String,id:String,columns:Int)(content:=&gt;T)(implicitevidence$5:views.html.htmlForm.bootstrap3.StringOrSeq[T]):String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
