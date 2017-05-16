@@ -19,11 +19,10 @@ protected sealed trait ValueUnion[-T]
 class Nada
 
 protected object ValueUnion {
-  implicit object FieldWitness   extends ValueUnion[Field]
+  implicit object BooleanWitness extends ValueUnion[Boolean]
+//  implicit object FieldWitness   extends ValueUnion[Field]
   implicit object FormWitness    extends ValueUnion[Form[_]]
   implicit object StringWitness  extends ValueUnion[String]
-  implicit object BooleanWitness extends ValueUnion[Boolean]
-  implicit object NadaWitness    extends ValueUnion[Nada]
 }
 
 protected sealed trait FieldOrName[-T]
@@ -61,53 +60,74 @@ protected object FieldOrName {
 object HtmlForm {
   /** This method uses ad-hoc polymorphism for the `fieldOrName` and `value` parameters.
     * In English this means that those parameters accept more than one type.
-    * If no value is explicitly provided (by passing Some value to `maybeValue`), this clunky implementation requires
-    * that the `Nada` parametric type is specified when a `Field` is passed as the value of `fieldOrName` and the value
-    * of the `Field` should be used to set the `checked` attribute.
-    * Because there are two parametric types, and if any are specified, they all must be specified, your code looks like this:
     * {{{
-    * checked[Field, Nada](form("refunded"), label="Refunded")
-    * }}}
-    * Sorry, I'll try to figure out a better implementation. You could also write:
-    * {{{
-    * checked(form("refunded"), label="Refunded", maybeValue=form("refunded").value)
+    * val refundedField = form("refunded")
+    * checked(refundedField, label="Refunded").value(false)
+    * checked(refundedField, label="Refunded").useFieldValue
+    * checked(refundedField, label="Refunded").toString
+    * checked(refundedField, label="Refunded").value(true)
+    * checked(refundedField, label="Refunded").value("true")
+    * checked("refunded", label="Refunded").value(form)
+    * checked("refunded", label="Refunded").value(true)
+    * checked("refunded", label="Refunded").value("true")
     * }}}
     * @return an HTML checkbox with CSS class `mediumCheckbox`,
     *         enclosed within a &lt;div&gt; with id `\${ fieldName }_container` and the CSS class `checked`.
-    *         If the `checked` status needs to be set from the value of the [[play.api.data.Field]], consider using the `checkedFromName` method.
-    * @param fieldOrName can be of type String or [[play.api.data.Field]]; these values are used to derive the values for the checkbox's `id` and `name` attributes.
+    *         If the `checked` status needs to be set from the value of the [[play.api.data.Field]], consider using the
+    *         `checkedFromName` method.
+    * @param fieldOrName can be of type String or [[play.api.data.Field]]; these values are used to derive the values
+    *                    for the checkbox's `id` and `name` attributes.
     * @param classes Add this value of this parameter to the enclosing div's CSS classes.
-    * @param label if non-empty, the label follows the checkbox
-    * @param maybeValue can be of type `Option[Form]`, `Option[Field]`, `Option[String]` or `Option[Boolean]`.
-    *              If a [[play.api.data.Form]] is provided, the value of `fieldOrName` is used to determine the [[play.api.data.Field]] value to obtain from the `Form`, and if set the checkbox will receive a `checked` attribute.
-    *              If a [[play.api.data.Field]] is provided, and has the value "true", "on" or "enabled" then set the checkbox's `checked` attribute.
-    *              If a `String` is provided, it is compared to "true", "on" or "enabled", and the result of the comparison is used to set the checkbox's `checked` attribute.
-    *              If a `Boolean` is provided, its value is used to set the checkbox's `checked` attribute. */
-  def checked[F: FieldOrName, V: ValueUnion](fieldOrName: F, maybeValue: Option[V]=None, label: String="", classes: String=""): String = {
-    def kindaTrue(value: String): Boolean = List("true", "on", "enabled").contains(value)
+    * @param label if non-empty, the label follows the checkbox */
+  def checked[F: FieldOrName](fieldOrName: F="", label: String="", classes: String=""): Checked[F] =
+    new Checked[F](fieldOrName, label, classes)
 
-    val fieldName = fieldOrName match {
+  class Checked[F: FieldOrName](fieldOrName: F="", label: String="", classes: String="") {
+    lazy val useFieldValue: String = {
+      val isTrue: Boolean = fieldOrName match {
+        case field: Field if field.value.isDefined => kindaTrue(field.value.get)
+        case field: Field => throw new Exception(s"Field ${ field.name } has no value")
+        case _: String    => throw new Exception(s"Cannot ask a String for a field value. Invoke the value method, or supply a Field instance to fieldOrName.")
+      }
+      html(isTrue)
+    }
+
+    override def toString: String = useFieldValue
+
+    /** @param theValue can be of type `Form`, `Field`, `String` or `Boolean`.
+      *   If a [[play.api.data.Form]] is provided, the value of `fieldOrName` is used to determine the
+      *   [[play.api.data.Field]] value to obtain from the `Form`, and if set the checkbox will receive a `checked` attribute.
+      *   If a [[play.api.data.Field]] is provided, and has the value "true", "on" or "enabled" then set the checkbox's `checked` attribute.
+      *   If a `String` is provided, it is compared to "true", "on" or "enabled", and the result of the comparison is
+      *   used to set the checkbox's `checked` attribute.
+      *   If a `Boolean` is provided, its value is used to set the checkbox's `checked` attribute. */
+    def value[V: ValueUnion](theValue: V): String = {
+      val isTrue: Boolean = theValue match {
+        case boolean: Boolean => boolean
+//        case field: Field     => field.value.exists(kindaTrue)
+        case form: Form[_]    => form(fieldName).value.exists(kindaTrue)
+        case string: String   => kindaTrue(string)
+      }
+      html(isTrue)
+    }
+
+    protected val fieldName: String = fieldOrName match {
       case field: Field => field.name
       case name: String => name
     }
 
-    val isTrue: Boolean = maybeValue.map {
-      case form: Form[_]    => form(fieldName).value.exists(kindaTrue)
-      case field: Field     => field.value.exists(kindaTrue)
-      case string: String   => kindaTrue(string)
-      case boolean: Boolean => boolean
-    }.getOrElse(fieldOrName match {
-      case field: Field => field.value.exists(kindaTrue)
-      case name: String => throw new Exception(s"No value supplied to checkedFrom for field $name")
-    })
-    val ckd = if (isTrue) "checked='checked'" else ""
+    protected val fieldId: String = fieldName.replace('.', '_').replace('[', '_').replace("]", "")
 
-    val fieldId = fieldName.replace('.', '_').replace('[', '_').replace("]", "")
-    s"""<div class="checked $classes" id="${ fieldId }_container">
-       |  <input type="checkbox" name="$fieldName" id="$fieldId" value="true" $ckd class="mediumCheckbox">
-       |  ${ if (label.trim.isEmpty) "" else s"$label" }
-       |</div>
-       |""".stripMargin
+    protected def html(isTrue: Boolean): String = {
+      val ckd = if (isTrue) "checked='checked'" else ""
+      s"""<div class="checked $classes" id="${ fieldId }_container">
+         |  <input type="checkbox" name="$fieldName" id="$fieldId" value="true" $ckd class="mediumCheckbox">
+         |  ${ if (label.trim.isEmpty) "" else s"$label" }
+         |</div>
+         |""".stripMargin
+    }
+
+    protected def kindaTrue(value: String): Boolean = List("true", "on", "enabled").contains(value)
   }
 
   /** Generates an &gt;input&lt; tag.
