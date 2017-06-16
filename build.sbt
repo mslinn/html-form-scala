@@ -63,7 +63,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.play"       %% "play"                 % playVer    % Docs,
   "com.typesafe.play"       %% "filters-helpers"      % playVer    % Docs,
   //
-  "com.micronautics"        %% "has-id"               % "1.0.1"    % Test withSources(),
+  "com.micronautics"        %% "has-id"               % "1.2.0"    % Test withSources(),
   "junit"                   %  "junit"                % "4.12"     % Test,
   "org.scalatest"           %% "scalatest"            % "3.0.1"    % Test withSources(),
   "org.scalatestplus.play"  %% "scalatestplus-play"   % stppVer    % Test withSources(),
