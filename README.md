@@ -1,9 +1,9 @@
-# Yet More HTML Form Widgets for Play Framework
+# Bootstrap 3 HTML Form Widgets for Play Framework
 
 [![Build Status](https://travis-ci.org/mslinn/html-form-scala.svg?branch=master)](https://travis-ci.org/mslinn/html-form-scala)
 [![GitHub version](https://badge.fury.io/gh/mslinn%2Fhtml-form-scala.svg)](https://badge.fury.io/gh/mslinn%2Fhtml-form-scala)
 
-This is yet another approach to providing HTML form widgets for Play Framework.
+This project provides Bootstrap 3 compatible HTML form widgets for Play Framework.
 The form widgets provided with Play Framework feature a minimum of parameters and have an arcane syntax as a result.
 Those widgets are rendered within a &lt;dl/&gt; tags, which is only useful for a narrow range of scenarios.
 Most HTML5 features are not supported "out of the box" so it is common to spend a lot of time crafting wrappers around the standard widgets.
