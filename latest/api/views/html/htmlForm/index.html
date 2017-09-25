@@ -1,0 +1,403 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title></title>
+          <meta name="description" content="" />
+          <meta name="keywords" content="" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="../../../lib/index.js"></script>
+      <script type="text/javascript" src="../../../index.js"></script>
+      <script type="text/javascript" src="../../../lib/scheduler.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '../../../';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title"><span id="doc-version"></span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../../index.html">
+              <span class="name">root</span>
+            </a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.views" visbl="pub" class="indented1 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="views"></a><a id="views:views"></a>
+      <span class="permalink">
+      <a href="index.html#views" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../../index.html">
+              <span class="name">views</span>
+            </a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="views.html" visbl="pub" class="indented2 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="html"></a><a id="html:html"></a>
+      <span class="permalink">
+      <a href="../views/index.html#html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../index.html">
+              <span class="name">html</span>
+            </a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="views">views</a></dd></dl></div>
+    </li><li name="views.html.htmlForm" visbl="pub" class="indented3 current" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="htmlForm"></a><a id="htmlForm:htmlForm"></a>
+      <span class="permalink">
+      <a href="../../views/html/index.html#htmlForm" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">htmlForm</span>
+      </span>
+      
+      <p class="shortcomment cmt">This is yet another approach to providing HTML form widgets for Play Framework using Scala.</p><div class="fullcomment"><div class="comment cmt"><p>This is yet another approach to providing HTML form widgets for Play Framework using Scala.
+The <a href="https://playframework.com/documentation/latest/api/scala/index.html#play.api.data.package" target="_blank">form widgets</a>
+provided with Play Framework feature a minimum of parameters and have an arcane syntax as a result.
+Those widgets are rendered within a &lt;dl/&gt; tags, which is only useful for a narrow range of scenarios.
+Most HTML5 features are not supported &quot;out of the box&quot; so it is common to spend a lot of time crafting wrappers around the standard widgets.</p><p>The <a href="https://github.com/adrianhurt/play-bootstrap" target="_blank">Play Bootstrap</a> widgets require Twitter Bootstrap,
+but otherwise its API is similar to the Play Framework form widget API.</p><p><a href="http://www.lihaoyi.com/scalatags/" target="_blank">ScalaTags</a> is another library for generating HTML using Scala.</p><p>This package produces output that closely resembles Play Bootstrap's output,
+but it uses many explicit parameters instead of following the Play Framework API approach.
+Widgets in the <code>views.html.htmlForm</code> package are HTML5 compatible,
+and include a <a href="CSRFHelper.html" class="extype" name="views.html.htmlForm.CSRFHelper">CSRF form helper</a>.</p><p>Widgets related to Twitter Bootstrap 3.x are provided in the <code>views.html.htmlForm.bootstrap3</code> package.
+Two flavors of modal dialog are provided, <a href="bootstrap3/SmartTabs.html" class="extype" name="views.html.htmlForm.bootstrap3.SmartTabs">htmlForm.bootstrap3.SmartTabs</a> and a <a href="bootstrap3/datePicker$.html" class="extype" name="views.html.htmlForm.bootstrap3.datePicker">date picker</a>.
+The <a href="bootstrap3/HtmlForm$.html" class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm">htmlForm.bootstrap3.HtmlForm</a> object contains <code>checkbox</code>es, <code>select</code>s, and various flavors of <code>input</code> for
+email, URLs, currency, passwords, percentages, range-limited numeric values and much more.</p><p>Widgets return String, not Html, for efficiency when using Plain Old Scala views.
+The <code>bootstrap3</code> class enriches <code>String</code> by adding a <code>toHtml</code> method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="views.html">html</a></dd></dl></div>
+    </li><li name="views.html.htmlForm.bootstrap3" visbl="pub" class="indented4 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="bootstrap3"></a><a id="bootstrap3:bootstrap3"></a>
+      <span class="permalink">
+      <a href="../../../views/html/htmlForm/index.html#bootstrap3" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="bootstrap3/index.html">
+              <span class="name">bootstrap3</span>
+            </a>
+      </span>
+      
+      
+    </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="class" href="CSRFHelper.html" title=""></a>
+                        <a href="CSRFHelper.html" title="">
+                          CSRFHelper
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="class" href="CsrfForm.html" title="Automatically adds a CSRF form field"></a>
+                        <a href="CsrfForm.html" title="Automatically adds a CSRF form field">
+                          CsrfForm
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="object" href="inputText2$.html" title="See https://github.com/playframework/Play20/blob/master/framework/src/play/src/main/scala/views/helper/inputText.scala.html"></a>
+                        <a href="inputText2$.html" title="See https://github.com/playframework/Play20/blob/master/framework/src/play/src/main/scala/views/helper/inputText.scala.html">
+                          inputText2
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="object" href="password$.html" title=""></a>
+                        <a href="password$.html" title="">
+                          password
+                        </a>
+                      </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="package value">
+      <div id="definition">
+        <div class="big-circle package">p</div>
+        <p id="owner"><a href="../../index.html" class="extype" name="views">views</a>.<a href="../index.html" class="extype" name="views.html">html</a></p>
+        <h1>htmlForm<span class="permalink">
+      <a href="../../../views/html/htmlForm/index.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">htmlForm</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This is yet another approach to providing HTML form widgets for Play Framework using Scala.
+The <a href="https://playframework.com/documentation/latest/api/scala/index.html#play.api.data.package" target="_blank">form widgets</a>
+provided with Play Framework feature a minimum of parameters and have an arcane syntax as a result.
+Those widgets are rendered within a &lt;dl/&gt; tags, which is only useful for a narrow range of scenarios.
+Most HTML5 features are not supported &quot;out of the box&quot; so it is common to spend a lot of time crafting wrappers around the standard widgets.</p><p>The <a href="https://github.com/adrianhurt/play-bootstrap" target="_blank">Play Bootstrap</a> widgets require Twitter Bootstrap,
+but otherwise its API is similar to the Play Framework form widget API.</p><p><a href="http://www.lihaoyi.com/scalatags/" target="_blank">ScalaTags</a> is another library for generating HTML using Scala.</p><p>This package produces output that closely resembles Play Bootstrap's output,
+but it uses many explicit parameters instead of following the Play Framework API approach.
+Widgets in the <code>views.html.htmlForm</code> package are HTML5 compatible,
+and include a <a href="CSRFHelper.html" class="extype" name="views.html.htmlForm.CSRFHelper">CSRF form helper</a>.</p><p>Widgets related to Twitter Bootstrap 3.x are provided in the <code>views.html.htmlForm.bootstrap3</code> package.
+Two flavors of modal dialog are provided, <a href="bootstrap3/SmartTabs.html" class="extype" name="views.html.htmlForm.bootstrap3.SmartTabs">htmlForm.bootstrap3.SmartTabs</a> and a <a href="bootstrap3/datePicker$.html" class="extype" name="views.html.htmlForm.bootstrap3.datePicker">date picker</a>.
+The <a href="bootstrap3/HtmlForm$.html" class="extype" name="views.html.htmlForm.bootstrap3.HtmlForm">htmlForm.bootstrap3.HtmlForm</a> object contains <code>checkbox</code>es, <code>select</code>s, and various flavors of <code>input</code> for
+email, URLs, currency, passwords, percentages, range-limited numeric values and much more.</p><p>Widgets return String, not Html, for efficiency when using Plain Old Scala views.
+The <code>bootstrap3</code> class enriches <code>String</code> by adding a <code>toHtml</code> method.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/mslinn/{name.value}/tree/master/src/main/scala/views/html/htmlForm/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              <li class="inherit out"><span>By Inheritance</span></li>
+            </ol>
+          </div>
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="views.html.htmlForm"><span>htmlForm</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="views.html.htmlForm.CSRFHelper" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CSRFHelperextendsAnyRef"></a><a id="CSRFHelper:CSRFHelper"></a>
+      <span class="permalink">
+      <a href="../../../views/html/htmlForm/index.html#CSRFHelperextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="CSRFHelper.html">
+              <span class="name">CSRFHelper</span>
+            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      
+    </li><li name="views.html.htmlForm.CsrfForm" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CsrfFormextendsProductwithSerializable"></a><a id="CsrfForm:CsrfForm"></a>
+      <span class="permalink">
+      <a href="../../../views/html/htmlForm/index.html#CsrfFormextendsProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="Automatically adds a CSRF form field" href="CsrfForm.html">
+              <span class="name">CsrfForm</span>
+            </a><span class="params">(<span name="id">id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="action">action: <span class="extype" name="play.api.mvc.Call">Call</span></span>, <span name="args">args: (<span class="extype" name="scala.Symbol">Symbol</span>, <span class="extype" name="scala.Predef.String">String</span>)*</span>)</span><span class="params">(<span name="body">body: (<span class="extype" name="scala.Option">Option</span>[<span class="extype" name="play.api.data.Form">Form</span>[_]]) ⇒ <span class="extype" name="play.twirl.api.Html">Html</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="csrfHelper">csrfHelper: <a href="CSRFHelper.html" class="extype" name="views.html.htmlForm.CSRFHelper">CSRFHelper</a></span>, <span name="request">request: <span class="extype" name="play.api.mvc.RequestHeader">RequestHeader</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Automatically adds a CSRF form field</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="views.html.htmlForm#tag" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="tag(start:String,end:String,content:String*):String"></a><a id="tag(String,String,String*):String"></a>
+      <span class="permalink">
+      <a href="../../../views/html/htmlForm/index.html#tag(start:String,end:String,content:String*):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tag</span><span class="params">(<span name="start">start: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="end">end: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Generic low-level method</p>
+    </li><li name="views.html.htmlForm.inputText2" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="inputText2"></a><a id="inputText2:inputText2"></a>
+      <span class="permalink">
+      <a href="../../../views/html/htmlForm/index.html#inputText2" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="See https://github.com/playframework/Play20/blob/master/framework/src/play/src/main/scala/views/helper/inputText.scala.html" href="inputText2$.html">
+              <span class="name">inputText2</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">See https://github.com/playframework/Play20/blob/master/framework/src/play/src/main/scala/views/helper/inputText.scala.html</p>
+    </li><li name="views.html.htmlForm.password" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="password"></a><a id="password:password"></a>
+      <span class="permalink">
+      <a href="../../../views/html/htmlForm/index.html#password" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="password$.html">
+              <span class="name">password</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt"></p>
+    </li>
+              </ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>
