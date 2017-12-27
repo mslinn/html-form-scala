@@ -4,7 +4,6 @@ import org.scalatest._
 import org.scalatest.junit.JUnitRunner
 import play.twirl.api.Html
 import views.html.htmlForm.bootstrap3._
-import views.html.htmlForm.bootstrap3.HtmlForm._
 
 @RunWith(classOf[JUnitRunner])
 class InputterTest extends WordSpec with MustMatchers with EitherValues with OptionValues {

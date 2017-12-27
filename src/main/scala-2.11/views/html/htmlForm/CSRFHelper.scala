@@ -7,7 +7,7 @@ import play.twirl.api.{Html, HtmlFormat}
 import views.html.helper.CSRF
 
 class CSRFHelper @Inject()(configuration: Configuration) {
-  lazy val enableCSRF: Boolean = Option(configuration.get[Boolean]("play.http.filterEnableCSRF")).contains(true)
+  lazy val enableCSRF: Boolean = Option(configuration.getBoolean("play.http.filterEnableCSRF")).flatten.contains(true)
 
   def formField(implicit request: RequestHeader): Html = if (enableCSRF) CSRF.formField else HtmlFormat.empty
 }

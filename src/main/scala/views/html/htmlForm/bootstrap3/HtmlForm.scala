@@ -3,7 +3,6 @@ package views.html.htmlForm.bootstrap3
 import currency.Currency
 import play.api.data.{Field, Form}
 import play.api.mvc.Call
-import scala.language.implicitConversions
 
 protected case class FadeValue(value: Boolean) extends AnyVal
 
@@ -328,8 +327,8 @@ object HtmlForm {
   }
 
   protected def expandedContent[T: StringOrSeq](content: T): String = content match {
-    case string: String   => string
-    case seq: Seq[_] => seq.mkString("\n")
+    case string: String => string
+    case seq: Seq[_]    => seq.mkString("\n")
   }
 
   /** Displays as a table with a heading; the height of the box depends on its contents.

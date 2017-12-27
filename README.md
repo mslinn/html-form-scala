@@ -30,7 +30,7 @@ Add this to your project's `build.sbt`:
 
     resolvers += "micronautics/play on bintray" at "http://dl.bintray.com/micronautics/play"
 
-    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.1.9" withSources()
+    libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.2.1" withSources()
 
 ## Scaladoc
 [Here](http://blog.mslinn.com/html-form-scala/latest/api/index.html#views.html.htmlForm.package)
