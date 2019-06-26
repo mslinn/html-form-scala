@@ -11,7 +11,7 @@
 
 cancelable := true
 
-crossScalaVersions := Seq("2.11.11", "2.12.4")
+crossScalaVersions := Seq("2.11.12", "2.12.8", "2.13.0")
 
 developers := List(
   Developer("mslinn",
@@ -34,12 +34,11 @@ javacOptions ++= Seq(
 )
 
 //val playVer = "2.5.12" // scalatestplus-play "2.0.0" is built with this version
-val playVer = "2.6.5"  // calatestplus-play "3.1.2" is built with this version
-val stppVer = if (playVer.startsWith("2.6")) "3.1.2" else "2.0.0"
+val playVer = "2.7.3"  // scalatestplus-play "3.1.2" is built with this version
+val stppVer = if (playVer.startsWith("2.7")) "3.1.2" else "2.0.0"
 libraryDependencies ++= Seq(
-  "com.github.nscala-time"  %% "nscala-time"          % "2.16.0"   withSources(),
-  "com.micronautics"        %% "currency"             % "1.2.10"   withSources(),
-  "com.micronautics"        %% "has-value"            % "1.0.1"    withSources(),
+  "com.micronautics"        %% "currency"             % "1.3.0"   withSources(),
+  "com.micronautics"        %% "has-value"            % "1.1.0"    withSources(),
   "com.typesafe.play"       %% "play"                 % playVer    % Provided withSources(),
   "com.typesafe.play"       %% "filters-helpers"      % playVer    % Provided withSources(),
   //
@@ -75,23 +74,17 @@ scalacOptions ++= Seq(
   "-feature",
   "-target:jvm-1.8",
   "-unchecked",
-  "-Ywarn-adapted-args",
-  "-Ywarn-dead-code",
-  "-Ywarn-numeric-widen",
-  "-Ywarn-unused",
-  "-Ywarn-value-discard",
-  "-Xfuture",
   "-Xlint"
 )
 
 scalacOptions in (Compile, doc) ++= baseDirectory.map {
-  (bd: File) => Seq[String](
+  bd: File => Seq[String](
      "-sourcepath", bd.getAbsolutePath,
      "-doc-source-url", "https://github.com/mslinn/html-form-scala/tree/master€{FILE_PATH}.scala"
   )
 }.value
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.13.0"
 
 scmInfo := Some(
   ScmInfo(
@@ -106,4 +99,4 @@ resolvers ++= Seq(
   "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala"
 )
 
-version := "0.2.1"
+version := "0.3.0"
