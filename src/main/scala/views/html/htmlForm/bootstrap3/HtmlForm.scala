@@ -306,9 +306,9 @@ object HtmlForm {
  )(implicit fade: FadeValue=FadeValue(false)): String = {
     val fadedValueClass = if (!fade.value) "" else " class='fadedValue'"
 
-    def empty(value: Any) = if (preFlight && !fade.value) s"<span class='preFlight'><i>$msg</i></span>" else s"<i$fadedValueClass>$msg</i>"
+    def empty(value: Any): String = if (preFlight && !fade.value) s"<span class='preFlight'><i>$msg</i></span>" else s"<i$fadedValueClass>$msg</i>"
 
-    def doIt(value: Any) = {
+    def doIt(value: Any): String = {
       val v = value.toString.trim
       if (v.isEmpty) empty(v)
       else if (asURL) s"""<a href='$v'><code>$v</code></a>"""
