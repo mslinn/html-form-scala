@@ -35,7 +35,7 @@ javacOptions ++= Seq(
 
 //val playVer = "2.5.12" // scalatestplus-play "2.0.0" is built with this version
 val playVer = "2.7.3"  // scalatestplus-play "3.1.2" is built with this version
-val stppVer = if (playVer.startsWith("2.7")) "3.1.2" else "2.0.0"
+val stppVer = if (playVer.startsWith("2.7")) "4.0.3" else "2.0.0"
 libraryDependencies ++= Seq(
   "com.micronautics"        %% "currency"             % "1.3.0"    withSources(),
   "com.micronautics"        %% "has-value"            % "1.1.0"    withSources(),
@@ -45,9 +45,9 @@ libraryDependencies ++= Seq(
   "com.typesafe.play"       %% "play"                 % playVer    % "docs",
   "com.typesafe.play"       %% "filters-helpers"      % playVer    % "docs",
   //
-  "com.micronautics"        %% "has-id"               % "1.2.0"    % Test withSources(),
+  "com.micronautics"        %% "has-id"               % "1.3.0"    % Test withSources(),
   "junit"                   %  "junit"                % "4.12"     % Test,
-  "org.scalatest"           %% "scalatest"            % "3.0.1"    % Test withSources(),
+  "org.scalatest"           %% "scalatest"            % "3.0.8"    % Test withSources(),
   "org.scalatestplus.play"  %% "scalatestplus-play"   % stppVer    % Test withSources(),
   "org.webjars"             %  "bootstrap-datepicker" % "1.6.1"    % Test,
   "org.webjars"             %  "bootstrap"            % "3.3.7-1"  % Test
