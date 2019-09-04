@@ -28,7 +28,7 @@ email, URLs, currency, passwords, percentages, range-limited numeric values and 
 ## Installation
 Add this to your project's `build.sbt`:
 
-    resolvers += "micronautics/play on bintray" at "http://dl.bintray.com/micronautics/play"
+    resolvers += "micronautics/play on bintray" at "https://dl.bintray.com/micronautics/play"
 
     libraryDependencies += "com.micronautics" %% "html-form-scala" % "0.2.1" withSources()
 

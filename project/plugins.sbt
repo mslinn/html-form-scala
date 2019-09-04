@@ -9,17 +9,13 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License. */
 
-//addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
-
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")
-
 // See https://github.com/orrsella/sbt-sublime
-addSbtPlugin("com.orrsella" % "sbt-sublime" % "1.1.1")
+addSbtPlugin("com.orrsella" % "sbt-sublime" % "1.1.2")
 
 // See https://github.com/jrudolph/sbt-dependency-graph
-addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.8.0")
+//addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.9.2")
 
 // See https://github.com/rtimush/sbt-updates
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.3.0")
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.4.2")
 
 //addSbtPlugin("com.thoughtworks.sbt-api-mappings" % "sbt-api-mappings" % "latest.release")

@@ -37,13 +37,13 @@ javacOptions ++= Seq(
 val playVer = "2.7.3"  // scalatestplus-play "3.1.2" is built with this version
 val stppVer = if (playVer.startsWith("2.7")) "3.1.2" else "2.0.0"
 libraryDependencies ++= Seq(
-  "com.micronautics"        %% "currency"             % "1.3.0"   withSources(),
+  "com.micronautics"        %% "currency"             % "1.3.0"    withSources(),
   "com.micronautics"        %% "has-value"            % "1.1.0"    withSources(),
   "com.typesafe.play"       %% "play"                 % playVer    % Provided withSources(),
   "com.typesafe.play"       %% "filters-helpers"      % playVer    % Provided withSources(),
   //
-  "com.typesafe.play"       %% "play"                 % playVer    % Docs,
-  "com.typesafe.play"       %% "filters-helpers"      % playVer    % Docs,
+  "com.typesafe.play"       %% "play"                 % playVer    % "docs",
+  "com.typesafe.play"       %% "filters-helpers"      % playVer    % "docs",
   //
   "com.micronautics"        %% "has-id"               % "1.2.0"    % Test withSources(),
   "junit"                   %  "junit"                % "4.12"     % Test,
@@ -96,7 +96,9 @@ scmInfo := Some(
 sublimeTransitive := true
 
 resolvers ++= Seq(
-  "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala"
+  "micronautics/scala on bintray" at "https://dl.bintray.com/micronautics/scala"
 )
+
+ThisBuild / turbo := true
 
 version := "0.3.0"
